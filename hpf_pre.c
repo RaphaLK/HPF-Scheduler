@@ -125,7 +125,7 @@ void generate_proc()
     numProcesses++;
   }
 
-  // Sort processes by arrival time for better scheduling
+  // Sort processes by arrival time 
   for (int i = 0; i < numProcesses - 1; i++) {
     for (int j = 0; j < numProcesses - i - 1; j++) {
       if (processList[j].arrivalTime > processList[j + 1].arrivalTime) {
@@ -139,6 +139,7 @@ void generate_proc()
   printf("Generated %d processes\n", numProcesses);
 }
 
+// Process stats
 void calculateStats(stats *s)
 {
   float totalTurnaround = 0;
@@ -180,6 +181,7 @@ void calculateStats(stats *s)
   s->throughput = maxFinishTime > 0 ? completedProcesses / maxFinishTime : 0;
 }
 
+// Stats per priority queue
 void calculatePriorityStats(priority_stats *ps)
 {
   // Initialize stats of each priority queue
@@ -275,19 +277,19 @@ void calculatePriorityStats(priority_stats *ps)
 
 void printStats(stats *s, const char *algorithmName)
 {
-  printf("\n=== %s Statistics ===\n", algorithmName);
+  printf("\n=== %s Stats ===\n", algorithmName);
   printf("Total Processes Completed: %d\n", s->totalProcesses);
-  printf("Avg Turnaround Time: %.2f quanta\n", s->avgTurnaroundTime);
-  printf("Avg Waiting Time: %.2f quanta\n", s->avgWaitingTime);
-  printf("Avg Response Time: %.2f quanta\n", s->avgResponseTime);
+  printf("Avg. Turnaround Time: %.2f quanta\n", s->avgTurnaroundTime);
+  printf("Avg. Waiting Time: %.2f quanta\n", s->avgWaitingTime);
+  printf("Avg. Response Time: %.2f quanta\n", s->avgResponseTime);
   printf("Throughput: %.2f processes/quantum\n", s->throughput);
 }
 
 void printPriorityStats(priority_stats *ps, const char *algorithmName)
 {
-  printf("\n=== %s Per-Priority Statistics ===\n", algorithmName);
+  printf("\n=== %s PQueue Statistics ===\n", algorithmName);
   
-  // Print statistics for each priority level
+  // Print statistics for each priority queue
   for (int priority = 0; priority < 4; priority++)
   {
     printf("\n--- Priority %d Statistics ---\n", priority + 1);
@@ -295,9 +297,9 @@ void printPriorityStats(priority_stats *ps, const char *algorithmName)
     
     if (ps->priorityStats[priority].totalProcesses > 0)
     {
-      printf("Avg Turnaround Time: %.2f quanta\n", ps->priorityStats[priority].avgTurnaroundTime);
-      printf("Avg Waiting Time: %.2f quanta\n", ps->priorityStats[priority].avgWaitingTime);
-      printf("Avg Response Time: %.2f quanta\n", ps->priorityStats[priority].avgResponseTime);
+      printf("Avg. Turnaround Time: %.2f quanta\n", ps->priorityStats[priority].avgTurnaroundTime);
+      printf("Avg. Waiting Time: %.2f quanta\n", ps->priorityStats[priority].avgWaitingTime);
+      printf("Avg. Response Time: %.2f quanta\n", ps->priorityStats[priority].avgResponseTime);
       printf("Throughput: %.2f processes/quantum\n", ps->priorityStats[priority].throughput);
     }
     else
@@ -339,8 +341,8 @@ void hpf_preemptive()
   printf("Time\tProcess\tPriority\tRemaining\tStatus\n");
 
   while (currentTime < MAX_QUANTA * 2)
-  { // Allow completion beyond 100 quanta
-    // Add arriving processes to appropriate priority queues
+  { 
+    // Allow completion beyond 100 quanta
     while (processIndex < numProcesses &&
            processList[processIndex].arrivalTime <= currentTime &&
            processList[processIndex].arrivalTime < MAX_QUANTA)
@@ -361,7 +363,7 @@ void hpf_preemptive()
       // Check if a higher priority process has arrived
       for (int i = 0; i < currentProcess->priority - 1; i++)
       {
-        if (!priorityQueues[i].count == 0)
+        if (priorityQueues[i].count > 0)
         {
           // Preempt current process
           // Time (in Quanta) -> Process Name -> Proc Priority Level -> Remaining Quanta till Completion -> Current Status
@@ -384,9 +386,19 @@ void hpf_preemptive()
     {
       for (int i = 0; i < 4; i++)
       {
-        if (!priorityQueues[i].count == 0)
+        if (priorityQueues[i].count > 0)
         {
+          // Check if it's the first time a process ran after quanta > 99
+          // DO NOT dequeue yet
+          process* tempProc = priorityQueues[i].processes[priorityQueues[i].front];
+
+          if (tempProc->startTime < 0 && currentTime > MAX_QUANTA)
+          {
+            continue;
+          }
+
           currentProcess = dequeue(&priorityQueues[i]);
+          
           if (currentProcess->startTime < 0)
           {
             currentProcess->startTime = currentTime;
@@ -426,15 +438,10 @@ void hpf_preemptive()
       // CPU is idle
       idleTime++;
       if (idleTime <= 2)
-      {
         printf("%.1f\t-\t-\t\t-\t\tIdle\n", currentTime);
-      }
-
       // Break if idle for too long and no more processes can arrive
-      if (idleTime > 10 && processIndex >= numProcesses)
-      {
+      if (idleTime > 2 && processIndex >= numProcesses) 
         break;
-      }
     }
 
     currentTime += 1.0f;
