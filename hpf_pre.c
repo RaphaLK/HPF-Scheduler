@@ -218,6 +218,7 @@ void calculatePriorityStats(priority_stats *ps)
       totalTurnaround[priority] += processList[i].turnaroundTime;
       totalWaiting[priority] += processList[i].waitingTime;
       
+      // resp time - time from arrival to start
       float responseTime = processList[i].startTime - processList[i].arrivalTime;
       totalResponse[priority] += responseTime;
       
@@ -241,7 +242,7 @@ void calculatePriorityStats(priority_stats *ps)
     }
   }
 
-  // Calculate averages for each priority
+  // Calculate averages for each priority queue
   for (int priority = 0; priority < 4; priority++)
   {
     ps->priorityStats[priority].totalProcesses = completedProcesses[priority];
@@ -304,11 +305,11 @@ void printPriorityStats(priority_stats *ps, const char *algorithmName)
     }
     else
     {
-      printf("No processes completed (possible starvation)\n");
+      printf("N/A (starvation)\n");
       printf("Avg Turnaround Time: N/A\n");
       printf("Avg Waiting Time: N/A\n");
       printf("Avg Response Time: N/A\n");
-      printf("Throughput: 0.00 processes/quantum\n");
+      printf("Throughput: N/A\n");
     }
   }
   
@@ -330,7 +331,7 @@ void hpf_preemptive()
     initQueue(&priorityQueues[i]);
   }
 
-  float currentTime = 0;
+  int currentTime = 0;
   int processIndex = 0;
   process *currentProcess = NULL;
   priority_stats schedulerStats = {0};
@@ -351,7 +352,7 @@ void hpf_preemptive()
       int priority = processList[processIndex].priority - 1; // Convert to 0-based index
       // Time (in Quanta) -> Process Name -> Proc Priority Level -> Remaining Quanta till Completion -> Current Status
       enqueue(&priorityQueues[priority], &processList[processIndex]);
-      printf("%.1f\t%c\t%d\t\t%.1f\t\tArrived\n",
+      printf("%d\t%c\t%d\t\t%.1f\t\tArrived\n",
              currentTime, processList[processIndex].processName,
              processList[processIndex].priority, processList[processIndex].remainingTime);
       processIndex++;
@@ -367,7 +368,7 @@ void hpf_preemptive()
         {
           // Preempt current process
           // Time (in Quanta) -> Process Name -> Proc Priority Level -> Remaining Quanta till Completion -> Current Status
-          printf("%.1f\t%c\t%d\t\t%.1f\t\tPreempted\n",
+          printf("%d\t%c\t%d\t\t%.1f\t\tPre-empted\n",
                  currentTime, currentProcess->processName,
                  currentProcess->priority, currentProcess->remainingTime);
 
@@ -404,7 +405,7 @@ void hpf_preemptive()
             currentProcess->startTime = currentTime;
           }
         // Time (in Quanta) -> Process Name -> Proc Priority Level -> Remaining Quanta till Completion -> Current Status
-          printf("%.1f\t%c\t%d\t\t%.1f\t\tStarted\n",
+          printf("%d\t%c\t%d\t\t%.1f\t\tStarted\n",
                  currentTime, currentProcess->processName,
                  currentProcess->priority, currentProcess->remainingTime);
           break;
@@ -420,13 +421,15 @@ void hpf_preemptive()
       if (currentProcess->remainingTime <= 0)
       {
         // Process completed
-        currentProcess->finishTime = currentTime + 1.0f;
+        currentProcess->finishTime = currentTime++;
+        // turnaroundtime = finish - arrival
         currentProcess->turnaroundTime = currentProcess->finishTime - currentProcess->arrivalTime;
+        // wait = turnaround - expectedruntime
         currentProcess->waitingTime = currentProcess->turnaroundTime - currentProcess->expectedRunTime;
         
         // Time (in Quanta) -> Process Name -> Proc Priority Level -> Remaining Quanta till Completion -> Current Status
-        printf("%.1f\t%c\t%d\t\t%.1f\t\tCompleted\n",
-               currentTime + 1.0f, currentProcess->processName,
+        printf("%d\t%c\t%d\t\t%.1f\t\tCompleted\n",
+               currentTime++, currentProcess->processName,
                currentProcess->priority, currentProcess->remainingTime);
 
         currentProcess = NULL;
@@ -438,13 +441,13 @@ void hpf_preemptive()
       // CPU is idle
       idleTime++;
       if (idleTime <= 2)
-        printf("%.1f\t-\t-\t\t-\t\tIdle\n", currentTime);
+        printf("%d\t-\t-\t\t-\t\tIdle\n", currentTime);
       // Break if idle for too long and no more processes can arrive
       if (idleTime > 2 && processIndex >= numProcesses) 
         break;
     }
 
-    currentTime += 1.0f;
+    currentTime++;
   }
 
   calculatePriorityStats(&schedulerStats);
