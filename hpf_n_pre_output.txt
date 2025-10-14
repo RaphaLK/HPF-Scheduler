@@ -1,0 +1,488 @@
+HPF (Non-pre) Scheduler Simulation
+=============================
+Generated 26 processes
+
+=== HPF Preemptive Scheduling ===
+Time	Process	Priority	Remaining	Status
+0	-	-		-		Idle
+1	-	-		-		Idle
+3	A	4		2.0		Arrived
+3	A	4		2.0		Started
+4	P	1		4.8		Arrived
+4	N	1		3.1		Arrived
+5	A	4		-0.0		Completed
+7	P	1		4.8		Started
+9	C	4		6.8		Arrived
+12	P	1		-0.2		Completed
+14	Y	1		7.2		Arrived
+14	Q	1		5.5		Arrived
+14	Q	4		0.4		Arrived
+14	N	1		3.1		Started
+16	F	3		6.6		Arrived
+18	N	1		-0.9		Completed
+20	T	4		3.3		Arrived
+20	N	4		0.8		Arrived
+20	Y	1		7.2		Started
+23	G	3		9.7		Arrived
+24	F	2		9.9		Arrived
+28	Y	1		-0.8		Completed
+30	R	4		2.3		Arrived
+30	P	3		2.8		Arrived
+30	Q	1		5.5		Started
+32	M	3		3.6		Arrived
+34	X	3		8.1		Arrived
+36	Q	1		-0.5		Completed
+38	Y	1		8.9		Arrived
+38	Y	1		8.9		Started
+45	L	1		5.8		Arrived
+47	Y	1		-0.1		Completed
+49	L	1		5.8		Started
+51	S	3		0.6		Arrived
+55	L	1		-0.2		Completed
+57	D	2		9.3		Arrived
+57	F	2		9.9		Started
+58	W	2		1.6		Arrived
+61	C	2		9.0		Arrived
+63	E	4		8.5		Arrived
+67	F	2		-0.1		Completed
+69	D	2		9.3		Started
+74	D	4		6.6		Arrived
+79	D	2		-0.7		Completed
+81	W	2		1.6		Started
+83	W	2		-0.4		Completed
+85	C	2		9.0		Started
+95	C	2		-1.0		Completed
+97	G	2		6.1		Arrived
+97	P	2		7.1		Arrived
+97	G	2		6.1		Started
+104	G	2		-0.9		Completed
+106	-	-		-		Idle
+107	-	-		-		Idle
+
+=== HPF Non-Preemptive PQueue Statistics ===
+
+--- Priority 1 Statistics ---
+Total Processes Completed: 6
+Avg. Turnaround Time: 12.89 quanta
+Avg. Waiting Time: 7.01 quanta
+Avg. Response Time: 7.55 quanta
+Throughput: 0.11 processes/quantum
+
+--- Priority 2 Statistics ---
+Total Processes Completed: 5
+Avg. Turnaround Time: 26.00 quanta
+Avg. Waiting Time: 18.83 quanta
+Avg. Response Time: 19.20 quanta
+Throughput: 0.05 processes/quantum
+
+--- Priority 3 Statistics ---
+Total Processes Completed: 0
+N/A (starvation)
+Avg Turnaround Time: N/A
+Avg Waiting Time: N/A
+Avg Response Time: N/A
+Throughput: N/A
+
+--- Priority 4 Statistics ---
+Total Processes Completed: 1
+Avg. Turnaround Time: 1.49 quanta
+Avg. Waiting Time: -0.46 quanta
+Avg. Response Time: 0.49 quanta
+Throughput: 0.25 processes/quantum
+
+--- Overall Statistics ---
+Total Processes Completed: 12
+Avg Turnaround Time: 17.40 quanta
+Avg Waiting Time: 11.31 quanta
+Avg Response Time: 11.82 quanta
+Throughput: 0.12 processes/quantum
+HPF (Non-pre) Scheduler Simulation
+=============================
+Generated 26 processes
+
+=== HPF Preemptive Scheduling ===
+Time	Process	Priority	Remaining	Status
+0	-	-		-		Idle
+1	-	-		-		Idle
+5	C	1		9.2		Arrived
+5	C	1		9.2		Started
+12	I	2		7.3		Arrived
+14	N	1		0.7		Arrived
+15	C	1		-0.8		Completed
+17	L	1		4.4		Arrived
+17	N	1		0.7		Started
+18	N	1		-0.3		Completed
+20	L	1		4.4		Started
+23	I	4		0.3		Arrived
+25	L	1		-0.6		Completed
+27	Z	3		8.4		Arrived
+27	I	2		7.3		Started
+35	I	2		-0.7		Completed
+37	S	1		0.2		Arrived
+37	P	4		5.3		Arrived
+37	S	1		0.2		Started
+38	S	1		-0.8		Completed
+40	Z	3		8.4		Started
+43	F	3		4.5		Arrived
+46	Z	1		9.2		Arrived
+47	A	2		2.4		Arrived
+49	Z	3		-0.6		Completed
+51	E	3		1.1		Arrived
+51	Z	1		9.2		Started
+52	R	4		1.9		Arrived
+53	Z	3		9.1		Arrived
+55	H	1		8.3		Arrived
+59	X	2		6.3		Arrived
+59	D	2		3.3		Arrived
+61	Z	1		-0.8		Completed
+63	H	1		8.3		Started
+64	V	3		2.8		Arrived
+66	V	3		9.3		Arrived
+66	L	3		1.6		Arrived
+71	P	1		9.4		Arrived
+71	A	4		3.0		Arrived
+72	H	1		-0.7		Completed
+74	P	1		9.4		Started
+82	M	3		7.9		Arrived
+84	P	1		-0.6		Completed
+86	G	3		2.3		Arrived
+86	A	2		2.4		Started
+88	F	1		3.2		Arrived
+89	A	2		-0.6		Completed
+91	Z	3		9.1		Arrived
+91	F	1		3.2		Started
+95	F	1		-0.8		Completed
+97	X	2		6.3		Started
+104	X	2		-0.7		Completed
+106	-	-		-		Idle
+107	-	-		-		Idle
+
+=== HPF Non-Preemptive PQueue Statistics ===
+
+--- Priority 1 Statistics ---
+Total Processes Completed: 8
+Avg. Turnaround Time: 9.36 quanta
+Avg. Waiting Time: 3.79 quanta
+Avg. Response Time: 4.11 quanta
+Throughput: 0.09 processes/quantum
+
+--- Priority 2 Statistics ---
+Total Processes Completed: 3
+Avg. Turnaround Time: 36.05 quanta
+Avg. Waiting Time: 30.71 quanta
+Avg. Response Time: 31.05 quanta
+Throughput: 0.03 processes/quantum
+
+--- Priority 3 Statistics ---
+Total Processes Completed: 1
+Avg. Turnaround Time: 22.57 quanta
+Avg. Waiting Time: 14.16 quanta
+Avg. Response Time: 14.57 quanta
+Throughput: 0.02 processes/quantum
+
+--- Priority 4 Statistics ---
+Total Processes Completed: 0
+N/A (starvation)
+Avg Turnaround Time: N/A
+Avg Waiting Time: N/A
+Avg Response Time: N/A
+Throughput: N/A
+
+--- Overall Statistics ---
+Total Processes Completed: 12
+Avg Turnaround Time: 17.14 quanta
+Avg Waiting Time: 11.39 quanta
+Avg Response Time: 11.72 quanta
+Throughput: 0.12 processes/quantum
+HPF (Non-pre) Scheduler Simulation
+=============================
+Generated 26 processes
+
+=== HPF Preemptive Scheduling ===
+Time	Process	Priority	Remaining	Status
+0	-	-		-		Idle
+1	-	-		-		Idle
+5	C	1		9.2		Arrived
+5	C	1		9.2		Started
+12	I	2		7.3		Arrived
+14	N	1		0.7		Arrived
+15	C	1		-0.8		Completed
+17	L	1		4.4		Arrived
+17	N	1		0.7		Started
+18	N	1		-0.3		Completed
+20	L	1		4.4		Started
+23	I	4		0.3		Arrived
+25	L	1		-0.6		Completed
+27	Z	3		8.4		Arrived
+27	I	2		7.3		Started
+35	I	2		-0.7		Completed
+37	S	1		0.2		Arrived
+37	P	4		5.3		Arrived
+37	S	1		0.2		Started
+38	S	1		-0.8		Completed
+40	Z	3		8.4		Started
+43	F	3		4.5		Arrived
+46	Z	1		9.2		Arrived
+47	A	2		2.4		Arrived
+49	Z	3		-0.6		Completed
+51	E	3		1.1		Arrived
+51	Z	1		9.2		Started
+52	R	4		1.9		Arrived
+53	Z	3		9.1		Arrived
+55	H	1		8.3		Arrived
+59	X	2		6.3		Arrived
+59	D	2		3.3		Arrived
+61	Z	1		-0.8		Completed
+63	H	1		8.3		Started
+64	V	3		2.8		Arrived
+66	V	3		9.3		Arrived
+66	L	3		1.6		Arrived
+71	P	1		9.4		Arrived
+71	A	4		3.0		Arrived
+72	H	1		-0.7		Completed
+74	P	1		9.4		Started
+82	M	3		7.9		Arrived
+84	P	1		-0.6		Completed
+86	G	3		2.3		Arrived
+86	A	2		2.4		Started
+88	F	1		3.2		Arrived
+89	A	2		-0.6		Completed
+91	Z	3		9.1		Arrived
+91	F	1		3.2		Started
+95	F	1		-0.8		Completed
+97	X	2		6.3		Started
+104	X	2		-0.7		Completed
+106	-	-		-		Idle
+107	-	-		-		Idle
+
+=== HPF Non-Preemptive PQueue Statistics ===
+
+--- Priority 1 Statistics ---
+Total Processes Completed: 8
+Avg. Turnaround Time: 9.36 quanta
+Avg. Waiting Time: 3.79 quanta
+Avg. Response Time: 4.11 quanta
+Throughput: 0.09 processes/quantum
+
+--- Priority 2 Statistics ---
+Total Processes Completed: 3
+Avg. Turnaround Time: 36.05 quanta
+Avg. Waiting Time: 30.71 quanta
+Avg. Response Time: 31.05 quanta
+Throughput: 0.03 processes/quantum
+
+--- Priority 3 Statistics ---
+Total Processes Completed: 1
+Avg. Turnaround Time: 22.57 quanta
+Avg. Waiting Time: 14.16 quanta
+Avg. Response Time: 14.57 quanta
+Throughput: 0.02 processes/quantum
+
+--- Priority 4 Statistics ---
+Total Processes Completed: 0
+N/A (starvation)
+Avg Turnaround Time: N/A
+Avg Waiting Time: N/A
+Avg Response Time: N/A
+Throughput: N/A
+
+--- Overall Statistics ---
+Total Processes Completed: 12
+Avg Turnaround Time: 17.14 quanta
+Avg Waiting Time: 11.39 quanta
+Avg Response Time: 11.72 quanta
+Throughput: 0.12 processes/quantum
+HPF (Non-pre) Scheduler Simulation
+=============================
+Generated 26 processes
+
+=== HPF Preemptive Scheduling ===
+Time	Process	Priority	Remaining	Status
+0	-	-		-		Idle
+1	-	-		-		Idle
+14	J	3		7.0		Arrived
+14	J	3		7.0		Started
+18	Y	4		5.9		Arrived
+22	J	3		-1.0		Completed
+24	J	3		2.8		Arrived
+24	H	1		9.4		Arrived
+24	H	1		9.4		Started
+25	O	4		7.6		Arrived
+28	L	3		2.0		Arrived
+34	H	1		-0.6		Completed
+36	J	3		2.8		Started
+39	J	3		-0.2		Completed
+41	L	3		2.0		Started
+43	L	3		-0.0		Completed
+45	P	2		7.5		Arrived
+45	Z	2		5.7		Arrived
+45	P	2		7.5		Started
+48	C	4		4.0		Arrived
+50	Y	3		5.4		Arrived
+50	J	3		4.3		Arrived
+53	P	2		-0.5		Completed
+55	G	2		9.1		Arrived
+55	W	3		6.6		Arrived
+55	Z	2		5.7		Started
+56	F	2		1.0		Arrived
+57	C	2		8.4		Arrived
+61	Z	2		-0.3		Completed
+63	G	2		9.1		Started
+65	N	1		8.5		Arrived
+73	G	2		-0.9		Completed
+75	N	1		8.5		Started
+76	L	2		5.9		Arrived
+78	I	2		2.1		Arrived
+80	N	1		6.1		Arrived
+81	M	1		0.9		Arrived
+84	N	1		-0.5		Completed
+86	V	2		8.5		Arrived
+86	N	1		6.1		Started
+92	Q	1		5.2		Arrived
+92	I	2		6.2		Arrived
+93	N	1		-0.9		Completed
+95	M	1		0.9		Started
+96	M	1		-0.1		Completed
+98	Z	3		0.3		Arrived
+98	I	1		2.0		Arrived
+98	Q	1		5.2		Started
+99	W	1		9.7		Arrived
+104	Q	1		-0.8		Completed
+106	-	-		-		Idle
+107	-	-		-		Idle
+
+=== HPF Non-Preemptive PQueue Statistics ===
+
+--- Priority 1 Statistics ---
+Total Processes Completed: 5
+Avg. Turnaround Time: 13.41 quanta
+Avg. Waiting Time: 7.39 quanta
+Avg. Response Time: 7.81 quanta
+Throughput: 0.05 processes/quantum
+
+--- Priority 2 Statistics ---
+Total Processes Completed: 3
+Avg. Turnaround Time: 14.47 quanta
+Avg. Waiting Time: 7.05 quanta
+Avg. Response Time: 7.47 quanta
+Throughput: 0.04 processes/quantum
+
+--- Priority 3 Statistics ---
+Total Processes Completed: 3
+Avg. Turnaround Time: 12.88 quanta
+Avg. Waiting Time: 8.94 quanta
+Avg. Response Time: 9.54 quanta
+Throughput: 0.07 processes/quantum
+
+--- Priority 4 Statistics ---
+Total Processes Completed: 0
+N/A (starvation)
+Avg Turnaround Time: N/A
+Avg Waiting Time: N/A
+Avg Response Time: N/A
+Throughput: N/A
+
+--- Overall Statistics ---
+Total Processes Completed: 11
+Avg Turnaround Time: 13.56 quanta
+Avg Waiting Time: 7.72 quanta
+Avg Response Time: 8.19 quanta
+Throughput: 0.11 processes/quantum
+HPF (Non-pre) Scheduler Simulation
+=============================
+Generated 26 processes
+
+=== HPF Preemptive Scheduling ===
+Time	Process	Priority	Remaining	Status
+0	-	-		-		Idle
+1	-	-		-		Idle
+7	W	3		3.4		Arrived
+7	W	3		3.4		Started
+11	W	3		-0.6		Completed
+13	A	2		9.4		Arrived
+13	S	3		6.1		Arrived
+13	A	2		9.4		Started
+16	K	2		0.2		Arrived
+23	A	2		-0.6		Completed
+25	K	2		0.2		Started
+26	K	2		-0.8		Completed
+28	S	3		6.1		Started
+29	L	2		1.7		Arrived
+33	S	2		9.6		Arrived
+35	S	3		-0.9		Completed
+37	L	2		1.7		Started
+39	L	2		-0.3		Completed
+41	S	2		9.6		Started
+42	E	1		7.3		Arrived
+46	S	1		9.1		Arrived
+47	L	3		4.8		Arrived
+48	L	4		3.5		Arrived
+51	S	2		-0.4		Completed
+53	M	3		2.5		Arrived
+53	C	3		5.5		Arrived
+53	E	1		7.3		Started
+55	L	4		6.2		Arrived
+55	J	3		5.9		Arrived
+57	S	1		3.2		Arrived
+61	E	1		-0.7		Completed
+63	W	1		5.9		Arrived
+63	S	1		9.1		Started
+70	U	3		5.7		Arrived
+71	E	1		5.9		Arrived
+73	S	1		-0.9		Completed
+75	S	1		3.2		Started
+79	S	1		-0.8		Completed
+81	W	1		5.9		Started
+84	O	3		1.6		Arrived
+85	I	1		3.2		Arrived
+86	Q	3		5.1		Arrived
+87	W	1		-0.1		Completed
+89	F	2		3.8		Arrived
+89	E	1		5.9		Started
+91	I	2		2.5		Arrived
+92	T	3		8.4		Arrived
+92	F	4		7.1		Arrived
+93	O	1		5.7		Arrived
+95	E	1		-0.1		Completed
+97	I	1		3.2		Started
+101	I	1		-0.8		Completed
+103	-	-		-		Idle
+104	-	-		-		Idle
+
+=== HPF Non-Preemptive PQueue Statistics ===
+
+--- Priority 1 Statistics ---
+Total Processes Completed: 6
+Avg. Turnaround Time: 22.03 quanta
+Avg. Waiting Time: 16.27 quanta
+Avg. Response Time: 16.70 quanta
+Throughput: 0.06 processes/quantum
+
+--- Priority 2 Statistics ---
+Total Processes Completed: 4
+Avg. Turnaround Time: 11.74 quanta
+Avg. Waiting Time: 6.51 quanta
+Avg. Response Time: 6.99 quanta
+Throughput: 0.08 processes/quantum
+
+--- Priority 3 Statistics ---
+Total Processes Completed: 2
+Avg. Turnaround Time: 12.77 quanta
+Avg. Waiting Time: 8.02 quanta
+Avg. Response Time: 8.27 quanta
+Throughput: 0.06 processes/quantum
+
+--- Priority 4 Statistics ---
+Total Processes Completed: 0
+N/A (starvation)
+Avg Turnaround Time: N/A
+Avg Waiting Time: N/A
+Avg Response Time: N/A
+Throughput: N/A
+
+--- Overall Statistics ---
+Total Processes Completed: 12
+Avg Turnaround Time: 17.06 quanta
+Avg Waiting Time: 11.64 quanta
+Avg Response Time: 12.06 quanta
+Throughput: 0.12 processes/quantum
