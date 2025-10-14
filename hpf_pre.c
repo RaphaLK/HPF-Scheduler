@@ -184,7 +184,7 @@ void hpf_preemptive()
   int totalPreemptions = 0;
 
   printf("\n=== HPF Preemptive Scheduling ===\n");
-  printf("Time\tProcess\tPriority\tRemaining\tAction\n");
+  printf("Time\tProcess\tPriority\tRemaining\tStatus\n");
 
   while (currentTime < MAX_QUANTA * 2)
   { // Allow completion beyond 100 quanta
@@ -195,8 +195,9 @@ void hpf_preemptive()
     {
 
       int priority = processList[processIndex].priority - 1; // Convert to 0-based index
+      // Time (in Quanta) -> Process Name -> Proc Priority Level -> Remaining Quanta till Completion -> Current Status
       enqueue(&priorityQueues[priority], &processList[processIndex]);
-      printf("%.1f\t%c\tP%d\t\t%.1f\t\tArrived\n",
+      printf("%.1f\t%c\t%d\t\t%.1f\t\tArrived\n",
              currentTime, processList[processIndex].processName,
              processList[processIndex].priority, processList[processIndex].remainingTime);
       processIndex++;
@@ -211,7 +212,8 @@ void hpf_preemptive()
         if (!isQueueEmpty(&priorityQueues[i]))
         {
           // Preempt current process
-          printf("%.1f\t%c\tP%d\t\t%.1f\t\tPreempted\n",
+          // Time (in Quanta) -> Process Name -> Proc Priority Level -> Remaining Quanta till Completion -> Current Status
+          printf("%.1f\t%c\t%d\t\t%.1f\t\tPreempted\n",
                  currentTime, currentProcess->processName,
                  currentProcess->priority, currentProcess->remainingTime);
 
@@ -237,7 +239,8 @@ void hpf_preemptive()
           {
             currentProcess->startTime = currentTime;
           }
-          printf("%.1f\t%c\tP%d\t\t%.1f\t\tStarted\n",
+        // Time (in Quanta) -> Process Name -> Proc Priority Level -> Remaining Quanta till Completion -> Current Status
+          printf("%.1f\t%c\t%d\t\t%.1f\t\tStarted\n",
                  currentTime, currentProcess->processName,
                  currentProcess->priority, currentProcess->remainingTime);
           break;
@@ -256,8 +259,9 @@ void hpf_preemptive()
         currentProcess->finishTime = currentTime + 1.0f;
         currentProcess->turnaroundTime = currentProcess->finishTime - currentProcess->arrivalTime;
         currentProcess->waitingTime = currentProcess->turnaroundTime - currentProcess->expectedRunTime;
-
-        printf("%.1f\t%c\tP%d\t\t%.1f\t\tCompleted\n",
+        
+        // Time (in Quanta) -> Process Name -> Proc Priority Level -> Remaining Quanta till Completion -> Current Status
+        printf("%.1f\t%c\t%d\t\t%.1f\t\tCompleted\n",
                currentTime + 1.0f, currentProcess->processName,
                currentProcess->priority, currentProcess->remainingTime);
 
@@ -287,18 +291,6 @@ void hpf_preemptive()
   calculateStats(&schedulerStats);
   printStats(&schedulerStats, "HPF Preemptive");
 }
-void resetProcesses()
-{
-  for (int i = 0; i < numProcesses; i++)
-  {
-    processList[i].remainingTime = processList[i].expectedRunTime;
-    processList[i].startTime = -1;
-    processList[i].finishTime = -1;
-    processList[i].turnaroundTime = 0;
-    processList[i].waitingTime = 0;
-    processList[i].timesPreempted = 0;
-  }
-}
 
 int main()
 {
@@ -309,11 +301,8 @@ int main()
 
   // Generate processes
   generate_proc();
-
-  // Run HPF Preemptive
+  // Scheduler
   hpf_preemptive();
 
-  // Reset processes for next algorithm
-  resetProcesses();
   return 0;
 }
