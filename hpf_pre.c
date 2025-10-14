@@ -32,7 +32,7 @@ typedef struct process
   // When a process starts and finished
   float startTime;
   float finishTime;
-  
+
   // It is equal to the sum total of Waiting time and Execution time.
   float turnaroundTime;
   float waitingTime;
@@ -62,8 +62,8 @@ typedef struct stats
 // Per-priority statistics structure
 typedef struct priority_stats
 {
-  stats priorityStats[4];  // Statistics for each priority level (1-4)
-  stats overallStats;      // Overall statistics across all priorities
+  stats priorityStats[4]; // Statistics for each priority level (1-4)
+  stats overallStats;     // Overall statistics across all priorities
 } priority_stats;
 
 process processList[NUM_PROCESSES];
@@ -109,7 +109,7 @@ void generate_proc()
   {
     process *simProcess = &processList[numProcesses];
     simProcess->processName = 'A' + (rand() % 26);
-    // arrival: 0 - 100f, expectedRunTime 0.1 - 10f 
+    // arrival: 0 - 100f, expectedRunTime 0.1 - 10f
     simProcess->arrivalTime = ((float)rand() / (float)(RAND_MAX)) * 99.0f;
     simProcess->expectedRunTime = 0.1f + ((float)rand() / (float)(RAND_MAX)) * 9.9f;
     simProcess->remainingTime = simProcess->expectedRunTime;
@@ -125,10 +125,13 @@ void generate_proc()
     numProcesses++;
   }
 
-  // Sort processes by arrival time 
-  for (int i = 0; i < numProcesses - 1; i++) {
-    for (int j = 0; j < numProcesses - i - 1; j++) {
-      if (processList[j].arrivalTime > processList[j + 1].arrivalTime) {
+  // Sort processes by arrival time
+  for (int i = 0; i < numProcesses - 1; i++)
+  {
+    for (int j = 0; j < numProcesses - i - 1; j++)
+    {
+      if (processList[j].arrivalTime > processList[j + 1].arrivalTime)
+      {
         process temp = processList[j];
         processList[j] = processList[j + 1];
         processList[j + 1] = temp;
@@ -154,13 +157,13 @@ void calculateStats(stats *s)
     {
       totalTurnaround += processList[i].turnaroundTime;
       totalWaiting += processList[i].waitingTime;
-      
+
       // Response time = start time - arrival time
       float responseTime = processList[i].startTime - processList[i].arrivalTime;
       totalResponse += responseTime;
-      
+
       completedProcesses++;
-      
+
       // Track maximum finish time for throughput calculation
       if (processList[i].finishTime > maxFinishTime)
       {
@@ -173,10 +176,10 @@ void calculateStats(stats *s)
 
   s->avgTurnaroundTime = completedProcesses > 0 ? totalTurnaround / completedProcesses : 0;
   s->avgWaitingTime = completedProcesses > 0 ? totalWaiting / completedProcesses : 0;
-  
+
   // the time-interval between submission of a request, and the first response to that request
   s->avgResponseTime = completedProcesses > 0 ? totalResponse / completedProcesses : 0;
-  
+
   // Throughput = finished processes / total simulation time
   s->throughput = maxFinishTime > 0 ? completedProcesses / maxFinishTime : 0;
 }
@@ -199,7 +202,7 @@ void calculatePriorityStats(priority_stats *ps)
   float totalResponse[4] = {0};
   int completedProcesses[4] = {0};
   float maxFinishTime[4] = {0};
-  
+
   float overallTotalTurnaround = 0;
   float overallTotalWaiting = 0;
   float overallTotalResponse = 0;
@@ -213,28 +216,28 @@ void calculatePriorityStats(priority_stats *ps)
     if (processList[i].startTime >= 0 && processList[i].finishTime >= 0)
     {
       int priority = processList[i].priority - 1; // Convert to 0-based index
-      
+
       // Per-priority statistics
       totalTurnaround[priority] += processList[i].turnaroundTime;
       totalWaiting[priority] += processList[i].waitingTime;
-      
+
       // resp time - time from arrival to start
       float responseTime = processList[i].startTime - processList[i].arrivalTime;
       totalResponse[priority] += responseTime;
-      
+
       completedProcesses[priority]++;
-      
+
       if (processList[i].finishTime > maxFinishTime[priority])
       {
         maxFinishTime[priority] = processList[i].finishTime;
       }
-      
+
       // Overall statistics
       overallTotalTurnaround += processList[i].turnaroundTime;
       overallTotalWaiting += processList[i].waitingTime;
       overallTotalResponse += responseTime;
       overallCompletedProcesses++;
-      
+
       if (processList[i].finishTime > overallMaxFinishTime)
       {
         overallMaxFinishTime = processList[i].finishTime;
@@ -246,14 +249,14 @@ void calculatePriorityStats(priority_stats *ps)
   for (int priority = 0; priority < 4; priority++)
   {
     ps->priorityStats[priority].totalProcesses = completedProcesses[priority];
-    
+
     if (completedProcesses[priority] > 0)
     {
       ps->priorityStats[priority].avgTurnaroundTime = totalTurnaround[priority] / completedProcesses[priority];
       ps->priorityStats[priority].avgWaitingTime = totalWaiting[priority] / completedProcesses[priority];
       ps->priorityStats[priority].avgResponseTime = totalResponse[priority] / completedProcesses[priority];
     }
-    
+
     if (maxFinishTime[priority] > 0)
     {
       ps->priorityStats[priority].throughput = completedProcesses[priority] / maxFinishTime[priority];
@@ -262,14 +265,14 @@ void calculatePriorityStats(priority_stats *ps)
 
   // Calculate overall averages
   ps->overallStats.totalProcesses = overallCompletedProcesses;
-  
+
   if (overallCompletedProcesses > 0)
   {
     ps->overallStats.avgTurnaroundTime = overallTotalTurnaround / overallCompletedProcesses;
     ps->overallStats.avgWaitingTime = overallTotalWaiting / overallCompletedProcesses;
     ps->overallStats.avgResponseTime = overallTotalResponse / overallCompletedProcesses;
   }
-  
+
   if (overallMaxFinishTime > 0)
   {
     ps->overallStats.throughput = overallCompletedProcesses / overallMaxFinishTime;
@@ -289,13 +292,13 @@ void printStats(stats *s, const char *algorithmName)
 void printPriorityStats(priority_stats *ps, const char *algorithmName)
 {
   printf("\n=== %s PQueue Statistics ===\n", algorithmName);
-  
+
   // Print statistics for each priority queue
   for (int priority = 0; priority < 4; priority++)
   {
     printf("\n--- Priority %d Statistics ---\n", priority + 1);
     printf("Total Processes Completed: %d\n", ps->priorityStats[priority].totalProcesses);
-    
+
     if (ps->priorityStats[priority].totalProcesses > 0)
     {
       printf("Avg. Turnaround Time: %.2f quanta\n", ps->priorityStats[priority].avgTurnaroundTime);
@@ -312,7 +315,7 @@ void printPriorityStats(priority_stats *ps, const char *algorithmName)
       printf("Throughput: N/A\n");
     }
   }
-  
+
   // Print overall statistics
   printf("\n--- Overall Statistics ---\n");
   printf("Total Processes Completed: %d\n", ps->overallStats.totalProcesses);
@@ -342,7 +345,7 @@ void hpf_preemptive()
   printf("Time\tProcess\tPriority\tRemaining\tStatus\n");
 
   while (currentTime < MAX_QUANTA * 2)
-  { 
+  {
     // Allow completion beyond 100 quanta
     while (processIndex < numProcesses &&
            processList[processIndex].arrivalTime <= currentTime &&
@@ -391,7 +394,7 @@ void hpf_preemptive()
         {
           // Check if it's the first time a process ran after quanta > 99
           // DO NOT dequeue yet
-          process* tempProc = priorityQueues[i].processes[priorityQueues[i].front];
+          process *tempProc = priorityQueues[i].processes[priorityQueues[i].front];
 
           if (tempProc->startTime < 0 && currentTime > MAX_QUANTA)
           {
@@ -399,12 +402,12 @@ void hpf_preemptive()
           }
 
           currentProcess = dequeue(&priorityQueues[i]);
-          
+
           if (currentProcess->startTime < 0)
           {
             currentProcess->startTime = currentTime;
           }
-        // Time (in Quanta) -> Process Name -> Proc Priority Level -> Remaining Quanta till Completion -> Current Status
+          // Time (in Quanta) -> Process Name -> Proc Priority Level -> Remaining Quanta till Completion -> Current Status
           printf("%d\t%c\t%d\t\t%.1f\t\tStarted\n",
                  currentTime, currentProcess->processName,
                  currentProcess->priority, currentProcess->remainingTime);
@@ -415,7 +418,7 @@ void hpf_preemptive()
 
     if (currentProcess != NULL)
     {
-      // Execute process for 1 quantum
+      // run process for 1 quantum
       currentProcess->remainingTime -= 1.0f;
 
       if (currentProcess->remainingTime <= 0)
@@ -426,7 +429,7 @@ void hpf_preemptive()
         currentProcess->turnaroundTime = currentProcess->finishTime - currentProcess->arrivalTime;
         // wait = turnaround - expectedruntime
         currentProcess->waitingTime = currentProcess->turnaroundTime - currentProcess->expectedRunTime;
-        
+
         // Time (in Quanta) -> Process Name -> Proc Priority Level -> Remaining Quanta till Completion -> Current Status
         printf("%d\t%c\t%d\t\t%.1f\t\tCompleted\n",
                currentTime++, currentProcess->processName,
@@ -434,6 +437,18 @@ void hpf_preemptive()
 
         currentProcess = NULL;
         idleTime = 0;
+      }
+      else
+      {
+        // current process --> back to rear of its priority queue (RR)
+        int currentPriority = currentProcess->priority - 1;
+        enqueue(&priorityQueues[currentPriority], currentProcess);
+
+        printf("%d\t%c\t%d\t\t%.1f\t\tRR Step\n",
+               currentTime, currentProcess->processName,
+               currentProcess->priority, currentProcess->remainingTime);
+
+        currentProcess = NULL; 
       }
     }
     else
@@ -443,7 +458,7 @@ void hpf_preemptive()
       if (idleTime <= 2)
         printf("%d\t-\t-\t\t-\t\tIdle\n", currentTime);
       // Break if idle for too long and no more processes can arrive
-      if (idleTime > 2 && processIndex >= numProcesses) 
+      if (idleTime > 2 && processIndex >= numProcesses)
         break;
     }
 

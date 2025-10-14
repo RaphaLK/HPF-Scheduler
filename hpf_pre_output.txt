@@ -6,114 +6,217 @@ Generated 26 processes
 Time	Process	Priority	Remaining	Status
 0	-	-		-		Idle
 1	-	-		-		Idle
-3	A	3		1.8		Arrived
-3	A	3		1.8		Started
-4	D	2		1.8		Arrived
-4	H	1		3.0		Arrived
-4	A	3		0.8		Preempted
-4	H	1		3.0		Started
-5	G	2		4.6		Arrived
-6	E	4		4.1		Arrived
-7	H	1		-0.0		Completed
-9	D	2		1.8		Started
-11	D	2		-0.2		Completed
-13	G	2		4.6		Started
-18	G	2		-0.4		Completed
-20	A	3		0.8		Started
-21	A	3		-0.2		Completed
-23	J	1		6.6		Arrived
-23	J	1		6.6		Started
-30	J	1		-0.4		Completed
-32	H	1		0.6		Arrived
-32	H	1		0.6		Started
-33	H	1		-0.4		Completed
-35	E	4		4.1		Started
-39	R	1		2.9		Arrived
-39	E	4		0.1		Preempted
-39	R	1		2.9		Started
-42	R	1		-0.1		Completed
-44	E	4		0.1		Started
-45	E	4		-0.9		Completed
-47	-	-		-		Idle
-48	Y	1		5.8		Arrived
-48	I	1		5.4		Arrived
-48	Y	1		5.8		Started
-54	Y	1		-0.2		Completed
-56	D	2		3.4		Arrived
-56	H	3		5.5		Arrived
-56	I	1		5.4		Started
-61	K	1		0.1		Arrived
-62	I	1		-0.6		Completed
-64	R	1		3.2		Arrived
-64	K	1		0.1		Started
-65	K	1		-0.9		Completed
-67	B	3		9.7		Arrived
-67	R	1		3.2		Started
-68	J	4		5.2		Arrived
-71	R	1		-0.8		Completed
-73	D	2		3.4		Started
-76	U	3		3.3		Arrived
-77	D	2		-0.6		Completed
-79	H	3		5.5		Started
-85	H	3		-0.5		Completed
-87	E	4		3.8		Arrived
-87	B	3		9.7		Started
-88	W	4		3.4		Arrived
-90	V	2		7.8		Arrived
-90	B	3		6.7		Preempted
-90	V	2		7.8		Started
-94	U	3		6.3		Arrived
-94	J	1		3.8		Arrived
-94	V	2		3.8		Preempted
-94	J	1		3.8		Started
-97	W	2		9.4		Arrived
-97	J	2		7.8		Arrived
-98	J	1		-0.2		Completed
-100	G	2		0.8		Arrived
-100	X	1		2.5		Arrived
-100	X	1		2.5		Started
-103	X	1		-0.5		Completed
-105	V	2		3.8		Started
-109	V	2		-0.2		Completed
-111	-	-		-		Idle
-112	-	-		-		Idle
+2	P	3		4.0		Arrived
+2	P	3		4.0		Started
+2	P	3		3.0		RR Step
+3	P	3		3.0		Started
+3	P	3		2.0		RR Step
+4	K	4		3.6		Arrived
+4	P	3		2.0		Started
+4	P	3		1.0		RR Step
+5	P	3		1.0		Started
+5	P	3		0.0		RR Step
+6	P	3		0.0		Started
+7	P	3		-1.0		Completed
+9	K	4		3.6		Started
+9	K	4		2.6		RR Step
+10	K	4		2.6		Started
+10	K	4		1.6		RR Step
+11	K	4		1.6		Started
+11	K	4		0.6		RR Step
+12	V	1		4.1		Arrived
+12	V	1		4.1		Started
+12	V	1		3.1		RR Step
+13	V	1		3.1		Started
+13	V	1		2.1		RR Step
+14	O	2		3.9		Arrived
+14	O	3		2.5		Arrived
+14	V	1		2.1		Started
+14	V	1		1.1		RR Step
+15	V	1		1.1		Started
+15	V	1		0.1		RR Step
+16	V	1		0.1		Started
+17	V	1		-0.9		Completed
+19	F	1		9.4		Arrived
+19	F	1		9.4		Started
+19	F	1		8.4		RR Step
+20	F	1		8.4		Started
+20	F	1		7.4		RR Step
+21	F	1		7.4		Started
+21	F	1		6.4		RR Step
+22	F	1		6.4		Started
+22	F	1		5.4		RR Step
+23	F	1		5.4		Started
+23	F	1		4.4		RR Step
+24	F	1		4.4		Started
+24	F	1		3.4		RR Step
+25	O	2		8.0		Arrived
+25	F	1		3.4		Started
+25	F	1		2.4		RR Step
+26	F	1		2.4		Started
+26	F	1		1.4		RR Step
+27	F	1		1.4		Started
+27	F	1		0.4		RR Step
+28	F	1		0.4		Started
+29	F	1		-0.6		Completed
+31	O	2		3.9		Started
+31	O	2		2.9		RR Step
+32	O	2		8.0		Started
+32	O	2		7.0		RR Step
+33	O	2		2.9		Started
+33	O	2		1.9		RR Step
+34	O	2		7.0		Started
+34	O	2		6.0		RR Step
+35	O	2		1.9		Started
+35	O	2		0.9		RR Step
+36	O	2		6.0		Started
+36	O	2		5.0		RR Step
+37	O	2		0.9		Started
+38	O	2		-0.1		Completed
+40	K	4		7.9		Arrived
+40	O	2		5.0		Started
+40	O	2		4.0		RR Step
+41	O	2		4.0		Started
+41	O	2		3.0		RR Step
+42	O	2		3.0		Started
+42	O	2		2.0		RR Step
+43	O	2		2.0		Started
+43	O	2		1.0		RR Step
+44	O	2		1.0		Started
+44	O	2		0.0		RR Step
+45	O	2		0.0		Started
+46	O	2		-1.0		Completed
+48	O	3		2.5		Started
+48	O	3		1.5		RR Step
+49	P	3		1.3		Arrived
+49	O	3		1.5		Started
+49	O	3		0.5		RR Step
+50	P	3		1.3		Started
+50	P	3		0.3		RR Step
+51	O	3		0.5		Started
+52	O	3		-0.5		Completed
+54	R	3		6.9		Arrived
+54	J	2		7.6		Arrived
+54	J	2		7.6		Started
+54	J	2		6.6		RR Step
+55	J	2		6.6		Started
+55	J	2		5.6		RR Step
+56	A	3		8.1		Arrived
+56	J	2		5.6		Started
+56	J	2		4.6		RR Step
+57	R	1		3.2		Arrived
+57	V	1		5.9		Arrived
+57	R	1		3.2		Started
+57	R	1		2.2		RR Step
+58	V	1		5.9		Started
+58	V	1		4.9		RR Step
+59	X	4		7.7		Arrived
+59	R	1		2.2		Started
+59	R	1		1.2		RR Step
+60	V	1		4.9		Started
+60	V	1		3.9		RR Step
+61	R	1		1.2		Started
+61	R	1		0.2		RR Step
+62	V	1		3.9		Started
+62	V	1		2.9		RR Step
+63	R	1		0.2		Started
+64	R	1		-0.8		Completed
+66	O	2		2.1		Arrived
+66	V	1		2.9		Started
+66	V	1		1.9		RR Step
+67	V	1		1.9		Started
+67	V	1		0.9		RR Step
+68	V	1		0.9		Started
+69	V	1		-0.1		Completed
+71	Z	1		0.9		Arrived
+71	U	4		5.2		Arrived
+71	Z	1		0.9		Started
+72	Z	1		-0.1		Completed
+74	J	2		4.6		Started
+74	J	2		3.6		RR Step
+75	L	4		8.0		Arrived
+75	O	2		2.1		Started
+75	O	2		1.1		RR Step
+76	M	3		3.4		Arrived
+76	J	2		3.6		Started
+76	J	2		2.6		RR Step
+77	O	2		1.1		Started
+77	O	2		0.1		RR Step
+78	J	2		2.6		Started
+78	J	2		1.6		RR Step
+79	O	2		0.1		Started
+80	O	2		-0.9		Completed
+82	J	2		1.6		Started
+82	J	2		0.6		RR Step
+83	J	2		0.6		Started
+84	J	2		-0.4		Completed
+86	P	3		0.3		Started
+87	P	3		-0.7		Completed
+89	D	2		1.5		Arrived
+89	J	3		0.3		Arrived
+89	D	2		1.5		Started
+89	D	2		0.5		RR Step
+90	D	2		0.5		Started
+91	D	2		-0.5		Completed
+93	R	1		6.8		Arrived
+93	K	2		1.5		Arrived
+93	R	1		6.8		Started
+93	R	1		5.8		RR Step
+94	R	1		5.8		Started
+94	R	1		4.8		RR Step
+95	O	2		5.2		Arrived
+95	R	1		4.8		Started
+95	R	1		3.8		RR Step
+96	M	2		9.1		Arrived
+96	R	1		3.8		Started
+96	R	1		2.8		RR Step
+97	R	1		2.8		Started
+97	R	1		1.8		RR Step
+98	R	1		1.8		Started
+98	R	1		0.8		RR Step
+99	R	1		0.8		Started
+100	R	1		-0.2		Completed
+102	K	4		0.6		Started
+103	K	4		-0.4		Completed
+105	-	-		-		Idle
+106	-	-		-		Idle
 
 === HPF Preemptive PQueue Statistics ===
 
 --- Priority 1 Statistics ---
-Total Processes Completed: 10
-Avg. Turnaround Time: 5.04 quanta
-Avg. Waiting Time: 1.65 quanta
-Avg. Response Time: 2.24 quanta
-Throughput: 0.10 processes/quantum
+Total Processes Completed: 6
+Avg. Turnaround Time: 7.78 quanta
+Avg. Waiting Time: 2.74 quanta
+Avg. Response Time: 1.94 quanta
+Throughput: 0.06 processes/quantum
 
 --- Priority 2 Statistics ---
-Total Processes Completed: 4
-Avg. Turnaround Time: 14.75 quanta
-Avg. Waiting Time: 10.33 quanta
-Avg. Response Time: 8.25 quanta
-Throughput: 0.04 processes/quantum
+Total Processes Completed: 5
+Avg. Turnaround Time: 18.13 quanta
+Avg. Waiting Time: 13.48 quanta
+Avg. Response Time: 7.53 quanta
+Throughput: 0.06 processes/quantum
 
 --- Priority 3 Statistics ---
-Total Processes Completed: 2
-Avg. Turnaround Time: 23.52 quanta
-Avg. Waiting Time: 19.89 quanta
-Avg. Response Time: 12.52 quanta
-Throughput: 0.02 processes/quantum
+Total Processes Completed: 3
+Avg. Turnaround Time: 26.37 quanta
+Avg. Waiting Time: 23.74 quanta
+Avg. Response Time: 12.04 quanta
+Throughput: 0.03 processes/quantum
 
 --- Priority 4 Statistics ---
 Total Processes Completed: 1
-Avg. Turnaround Time: 38.35 quanta
-Avg. Waiting Time: 34.23 quanta
-Avg. Response Time: 29.35 quanta
-Throughput: 0.02 processes/quantum
+Avg. Turnaround Time: 98.56 quanta
+Avg. Waiting Time: 94.98 quanta
+Avg. Response Time: 5.56 quanta
+Throughput: 0.01 processes/quantum
 
 --- Overall Statistics ---
-Total Processes Completed: 17
-Avg Turnaround Time: 11.46 quanta
-Avg Waiting Time: 7.75 quanta
-Avg Response Time: 6.46 quanta
-Throughput: 0.16 processes/quantum
+Total Processes Completed: 15
+Avg Turnaround Time: 21.00 quanta
+Avg Waiting Time: 16.67 quanta
+Avg Response Time: 6.06 quanta
+Throughput: 0.15 processes/quantum
 HPF Scheduler Simulation
 ========================
 Generated 26 processes
@@ -122,103 +225,686 @@ Generated 26 processes
 Time	Process	Priority	Remaining	Status
 0	-	-		-		Idle
 1	-	-		-		Idle
-8	X	3		6.4		Arrived
-8	X	3		6.4		Started
-11	T	1		4.5		Arrived
-11	X	3		3.4		Preempted
-11	T	1		4.5		Started
-14	O	2		3.0		Arrived
-14	I	1		3.6		Arrived
-16	T	1		-0.5		Completed
-18	I	1		3.6		Started
-22	I	1		-0.4		Completed
-24	Y	2		4.9		Arrived
-24	E	4		9.4		Arrived
-24	O	2		3.0		Started
-26	L	1		6.2		Arrived
-26	O	2		1.0		Preempted
-26	L	1		6.2		Started
-28	B	1		8.6		Arrived
-31	A	3		3.4		Arrived
-33	L	1		-0.8		Completed
-35	B	1		8.6		Started
-37	E	1		8.6		Arrived
-44	B	1		-0.4		Completed
-46	E	1		8.6		Started
-49	V	4		5.0		Arrived
-50	K	1		3.5		Arrived
-53	L	4		6.4		Arrived
-55	E	1		-0.4		Completed
-57	P	4		7.1		Arrived
-57	K	1		3.5		Started
-58	Y	4		0.8		Arrived
-61	K	1		-0.5		Completed
-63	L	4		8.1		Arrived
-63	Y	2		4.9		Started
-64	A	1		9.6		Arrived
-64	Y	2		3.9		Preempted
-64	A	1		9.6		Started
-72	A	1		9.3		Arrived
-73	C	3		7.8		Arrived
-74	A	1		-0.4		Completed
-76	W	3		2.2		Arrived
-76	A	1		9.3		Started
-77	E	4		7.8		Arrived
-80	L	3		4.4		Arrived
-85	O	3		9.0		Arrived
-86	A	1		-0.7		Completed
-88	O	2		1.0		Started
-89	O	2		-0.0		Completed
-91	Y	2		3.9		Started
-93	I	1		6.1		Arrived
-93	H	3		3.2		Arrived
-93	Y	2		1.9		Preempted
-93	I	1		6.1		Started
-95	A	2		3.0		Arrived
-100	I	1		-0.9		Completed
-102	Y	2		1.9		Started
-104	Y	2		-0.1		Completed
-106	X	3		3.4		Started
-107	X	3		2.4		Preempted
-107	-	-		-		Idle
-108	-	-		-		Idle
+9	C	1		2.0		Arrived
+9	C	1		2.0		Started
+9	C	1		1.0		RR Step
+10	C	1		1.0		Started
+11	C	1		-0.0		Completed
+13	X	1		1.2		Arrived
+13	X	1		1.2		Started
+13	X	1		0.2		RR Step
+14	U	1		2.2		Arrived
+14	X	1		0.2		Started
+15	X	1		-0.8		Completed
+17	U	1		2.2		Started
+17	U	1		1.2		RR Step
+18	U	1		1.2		Started
+18	U	1		0.2		RR Step
+19	U	1		0.2		Started
+20	U	1		-0.8		Completed
+22	V	2		5.0		Arrived
+22	N	3		8.1		Arrived
+22	V	2		5.0		Started
+22	V	2		4.0		RR Step
+23	V	2		4.0		Started
+23	V	2		3.0		RR Step
+24	F	2		2.0		Arrived
+24	V	2		3.0		Started
+24	V	2		2.0		RR Step
+25	F	2		2.0		Started
+25	F	2		1.0		RR Step
+26	S	1		4.9		Arrived
+26	S	1		4.9		Started
+26	S	1		3.9		RR Step
+27	S	1		3.9		Started
+27	S	1		2.9		RR Step
+28	S	1		2.9		Started
+28	S	1		1.9		RR Step
+29	J	4		9.3		Arrived
+29	S	1		1.9		Started
+29	S	1		0.9		RR Step
+30	B	2		9.0		Arrived
+30	S	1		0.9		Started
+31	S	1		-0.1		Completed
+33	P	3		8.7		Arrived
+33	V	2		2.0		Started
+33	V	2		1.0		RR Step
+34	F	2		1.0		Started
+34	F	2		0.0		RR Step
+35	B	2		9.0		Started
+35	B	2		8.0		RR Step
+36	P	2		4.4		Arrived
+36	F	1		7.7		Arrived
+36	F	1		7.7		Started
+36	F	1		6.7		RR Step
+37	F	1		6.7		Started
+37	F	1		5.7		RR Step
+38	F	1		5.7		Started
+38	F	1		4.7		RR Step
+39	X	2		6.7		Arrived
+39	X	2		3.4		Arrived
+39	F	1		4.7		Started
+39	F	1		3.7		RR Step
+40	X	1		1.4		Arrived
+40	F	1		3.7		Started
+40	F	1		2.7		RR Step
+41	X	1		1.4		Started
+41	X	1		0.4		RR Step
+42	F	1		2.7		Started
+42	F	1		1.7		RR Step
+43	X	1		0.4		Started
+44	X	1		-0.6		Completed
+46	F	1		1.7		Started
+46	F	1		0.7		RR Step
+47	F	1		0.7		Started
+48	F	1		-0.3		Completed
+50	V	2		1.0		Started
+51	V	2		-0.0		Completed
+53	R	1		5.9		Arrived
+53	R	1		5.9		Started
+53	R	1		4.9		RR Step
+54	R	1		4.9		Started
+54	R	1		3.9		RR Step
+55	R	1		3.9		Started
+55	R	1		2.9		RR Step
+56	R	1		2.9		Started
+56	R	1		1.9		RR Step
+57	R	1		1.9		Started
+57	R	1		0.9		RR Step
+58	R	1		0.9		Started
+59	R	1		-0.1		Completed
+61	C	1		0.3		Arrived
+61	C	1		0.3		Started
+62	C	1		-0.7		Completed
+64	F	2		0.0		Started
+65	F	2		-1.0		Completed
+67	B	2		8.0		Started
+67	B	2		7.0		RR Step
+68	S	4		8.1		Arrived
+68	P	2		4.4		Started
+68	P	2		3.4		RR Step
+69	X	2		6.7		Started
+69	X	2		5.7		RR Step
+70	X	2		3.4		Started
+70	X	2		2.4		RR Step
+71	B	2		7.0		Started
+71	B	2		6.0		RR Step
+72	P	2		3.4		Started
+72	P	2		2.4		RR Step
+73	H	1		1.3		Arrived
+73	H	1		1.3		Started
+73	H	1		0.3		RR Step
+74	H	1		0.3		Started
+75	H	1		-0.7		Completed
+77	R	2		2.5		Arrived
+77	X	2		5.7		Started
+77	X	2		4.7		RR Step
+78	X	2		2.4		Started
+78	X	2		1.4		RR Step
+79	B	2		6.0		Started
+79	B	2		5.0		RR Step
+80	P	2		2.4		Started
+80	P	2		1.4		RR Step
+81	R	2		2.5		Started
+81	R	2		1.5		RR Step
+82	R	2		2.0		Arrived
+82	X	2		4.7		Started
+82	X	2		3.7		RR Step
+83	X	2		1.4		Started
+83	X	2		0.4		RR Step
+84	Q	4		7.8		Arrived
+84	B	2		5.0		Started
+84	B	2		4.0		RR Step
+85	P	2		1.4		Started
+85	P	2		0.4		RR Step
+86	R	2		1.5		Started
+86	R	2		0.5		RR Step
+87	R	2		2.0		Started
+87	R	2		1.0		RR Step
+88	X	2		3.7		Started
+88	X	2		2.7		RR Step
+89	X	2		0.4		Started
+90	X	2		-0.6		Completed
+92	I	2		0.9		Arrived
+92	B	2		4.0		Started
+92	B	2		3.0		RR Step
+93	P	2		0.4		Started
+94	P	2		-0.6		Completed
+96	Y	1		3.2		Arrived
+96	Y	1		3.2		Started
+96	Y	1		2.2		RR Step
+97	Y	1		2.2		Started
+97	Y	1		1.2		RR Step
+98	A	1		4.6		Arrived
+98	Y	1		1.2		Started
+98	Y	1		0.2		RR Step
+99	M	4		2.8		Arrived
+99	A	1		4.6		Started
+99	A	1		3.6		RR Step
+100	Y	1		0.2		Started
+101	Y	1		-0.8		Completed
+103	A	1		3.6		Started
+103	A	1		2.6		RR Step
+104	A	1		2.6		Started
+104	A	1		1.6		RR Step
+105	A	1		1.6		Started
+105	A	1		0.6		RR Step
+106	A	1		0.6		Started
+107	A	1		-0.4		Completed
+109	R	2		0.5		Started
+110	R	2		-0.5		Completed
+112	R	2		1.0		Started
+112	R	2		0.0		RR Step
+113	X	2		2.7		Started
+113	X	2		1.7		RR Step
+114	-	-		-		Idle
+115	-	-		-		Idle
 
 === HPF Preemptive PQueue Statistics ===
 
 --- Priority 1 Statistics ---
-Total Processes Completed: 9
-Avg. Turnaround Time: 10.20 quanta
-Avg. Waiting Time: 3.53 quanta
-Avg. Response Time: 3.98 quanta
-Throughput: 0.09 processes/quantum
+Total Processes Completed: 11
+Avg. Turnaround Time: 5.20 quanta
+Avg. Waiting Time: 2.05 quanta
+Avg. Response Time: 1.74 quanta
+Throughput: 0.10 processes/quantum
 
 --- Priority 2 Statistics ---
-Total Processes Completed: 2
-Avg. Turnaround Time: 77.86 quanta
-Avg. Waiting Time: 73.92 quanta
-Avg. Response Time: 25.86 quanta
-Throughput: 0.02 processes/quantum
+Total Processes Completed: 5
+Avg. Turnaround Time: 42.77 quanta
+Avg. Waiting Time: 39.31 quanta
+Avg. Response Time: 14.97 quanta
+Throughput: 0.05 processes/quantum
 
 --- Priority 3 Statistics ---
 Total Processes Completed: 0
-No processes completed (possible starvation)
+N/A (starvation)
 Avg Turnaround Time: N/A
 Avg Waiting Time: N/A
 Avg Response Time: N/A
-Throughput: 0.00 processes/quantum
+Throughput: N/A
 
 --- Priority 4 Statistics ---
 Total Processes Completed: 0
-No processes completed (possible starvation)
+N/A (starvation)
 Avg Turnaround Time: N/A
 Avg Waiting Time: N/A
 Avg Response Time: N/A
-Throughput: 0.00 processes/quantum
+Throughput: N/A
+
+--- Overall Statistics ---
+Total Processes Completed: 16
+Avg Turnaround Time: 16.94 quanta
+Avg Waiting Time: 13.69 quanta
+Avg Response Time: 5.87 quanta
+Throughput: 0.15 processes/quantum
+HPF Scheduler Simulation
+========================
+Generated 26 processes
+
+=== HPF Preemptive Scheduling ===
+Time	Process	Priority	Remaining	Status
+0	-	-		-		Idle
+1	-	-		-		Idle
+8	Y	1		7.1		Arrived
+8	Y	1		7.1		Started
+8	Y	1		6.1		RR Step
+9	Y	1		6.1		Started
+9	Y	1		5.1		RR Step
+10	Y	1		5.1		Started
+10	Y	1		4.1		RR Step
+11	Y	1		4.1		Started
+11	Y	1		3.1		RR Step
+12	Y	1		3.1		Started
+12	Y	1		2.1		RR Step
+13	O	2		9.7		Arrived
+13	Y	1		2.1		Started
+13	Y	1		1.1		RR Step
+14	Y	1		1.1		Started
+14	Y	1		0.1		RR Step
+15	Y	1		0.1		Started
+16	Y	1		-0.9		Completed
+18	T	3		9.5		Arrived
+18	O	4		5.5		Arrived
+18	O	2		9.7		Started
+18	O	2		8.7		RR Step
+19	O	2		8.7		Started
+19	O	2		7.7		RR Step
+20	O	2		7.7		Started
+20	O	2		6.7		RR Step
+21	O	2		6.7		Started
+21	O	2		5.7		RR Step
+22	O	2		5.7		Started
+22	O	2		4.7		RR Step
+23	U	4		1.9		Arrived
+23	O	2		4.7		Started
+23	O	2		3.7		RR Step
+24	O	2		3.7		Started
+24	O	2		2.7		RR Step
+25	O	2		2.7		Started
+25	O	2		1.7		RR Step
+26	G	1		5.3		Arrived
+26	G	1		5.3		Started
+26	G	1		4.3		RR Step
+27	G	1		4.3		Started
+27	G	1		3.3		RR Step
+28	G	1		3.3		Started
+28	G	1		2.3		RR Step
+29	G	1		2.3		Started
+29	G	1		1.3		RR Step
+30	C	1		8.9		Arrived
+30	G	1		1.3		Started
+30	G	1		0.3		RR Step
+31	Z	3		5.7		Arrived
+31	C	1		8.9		Started
+31	C	1		7.9		RR Step
+32	G	1		0.3		Started
+33	G	1		-0.7		Completed
+35	C	1		7.9		Started
+35	C	1		6.9		RR Step
+36	D	4		1.6		Arrived
+36	C	1		6.9		Started
+36	C	1		5.9		RR Step
+37	C	1		5.9		Started
+37	C	1		4.9		RR Step
+38	K	4		9.0		Arrived
+38	C	1		4.9		Started
+38	C	1		3.9		RR Step
+39	O	2		6.7		Arrived
+39	C	1		3.9		Started
+39	C	1		2.9		RR Step
+40	G	1		2.2		Arrived
+40	C	1		2.9		Started
+40	C	1		1.9		RR Step
+41	G	1		2.2		Started
+41	G	1		1.2		RR Step
+42	C	1		1.9		Started
+42	C	1		0.9		RR Step
+43	G	1		1.2		Started
+43	G	1		0.2		RR Step
+44	C	1		0.9		Started
+45	C	1		-0.1		Completed
+47	G	1		0.2		Started
+48	G	1		-0.8		Completed
+50	C	2		1.7		Arrived
+50	O	2		1.7		Started
+50	O	2		0.7		RR Step
+51	X	2		5.1		Arrived
+51	O	2		6.7		Started
+51	O	2		5.7		RR Step
+52	W	2		0.2		Arrived
+52	K	1		7.2		Arrived
+52	K	1		7.2		Started
+52	K	1		6.2		RR Step
+53	K	1		6.2		Started
+53	K	1		5.2		RR Step
+54	K	1		5.2		Started
+54	K	1		4.2		RR Step
+55	K	1		4.2		Started
+55	K	1		3.2		RR Step
+56	K	1		3.2		Started
+56	K	1		2.2		RR Step
+57	K	1		2.2		Started
+57	K	1		1.2		RR Step
+58	K	1		1.2		Started
+58	K	1		0.2		RR Step
+59	K	1		0.2		Started
+60	K	1		-0.8		Completed
+62	G	4		9.9		Arrived
+62	C	2		1.7		Started
+62	C	2		0.7		RR Step
+63	O	2		0.7		Started
+64	O	2		-0.3		Completed
+66	X	2		5.1		Started
+66	X	2		4.1		RR Step
+67	O	2		5.7		Started
+67	O	2		4.7		RR Step
+68	R	1		5.2		Arrived
+68	R	1		5.2		Started
+68	R	1		4.2		RR Step
+69	R	1		4.2		Started
+69	R	1		3.2		RR Step
+70	R	1		3.2		Started
+70	R	1		2.2		RR Step
+71	R	1		2.2		Started
+71	R	1		1.2		RR Step
+72	R	1		1.2		Started
+72	R	1		0.2		RR Step
+73	W	2		1.1		Arrived
+73	R	1		0.2		Started
+74	R	1		-0.8		Completed
+76	W	2		0.2		Started
+77	W	2		-0.8		Completed
+79	T	2		2.5		Arrived
+79	C	2		0.7		Started
+80	C	2		-0.3		Completed
+82	X	2		4.1		Started
+82	X	2		3.1		RR Step
+83	O	2		4.7		Started
+83	O	2		3.7		RR Step
+84	S	3		8.8		Arrived
+84	W	2		1.1		Started
+84	W	2		0.1		RR Step
+85	T	2		2.5		Started
+85	T	2		1.5		RR Step
+86	X	2		3.1		Started
+86	X	2		2.1		RR Step
+87	O	2		3.7		Started
+87	O	2		2.7		RR Step
+88	J	4		7.1		Arrived
+88	L	1		7.6		Arrived
+88	L	1		7.6		Started
+88	L	1		6.6		RR Step
+89	L	1		6.6		Started
+89	L	1		5.6		RR Step
+90	L	1		5.6		Started
+90	L	1		4.6		RR Step
+91	I	2		0.3		Arrived
+91	L	1		4.6		Started
+91	L	1		3.6		RR Step
+92	Z	2		8.3		Arrived
+92	L	1		3.6		Started
+92	L	1		2.6		RR Step
+93	L	1		2.6		Started
+93	L	1		1.6		RR Step
+94	L	1		1.6		Started
+94	L	1		0.6		RR Step
+95	L	1		0.6		Started
+96	L	1		-0.4		Completed
+98	W	1		4.9		Arrived
+98	W	1		4.9		Started
+98	W	1		3.9		RR Step
+99	W	1		3.9		Started
+99	W	1		2.9		RR Step
+100	W	1		2.9		Started
+100	W	1		1.9		RR Step
+101	W	1		1.9		Started
+101	W	1		0.9		RR Step
+102	W	1		0.9		Started
+103	W	1		-0.1		Completed
+105	W	2		0.1		Started
+106	W	2		-0.9		Completed
+108	T	2		1.5		Started
+108	T	2		0.5		RR Step
+109	X	2		2.1		Started
+109	X	2		1.1		RR Step
+110	O	2		2.7		Started
+110	O	2		1.7		RR Step
+111	-	-		-		Idle
+112	-	-		-		Idle
+
+=== HPF Preemptive PQueue Statistics ===
+
+--- Priority 1 Statistics ---
+Total Processes Completed: 8
+Avg. Turnaround Time: 7.78 quanta
+Avg. Waiting Time: 1.72 quanta
+Avg. Response Time: 0.90 quanta
+Throughput: 0.08 processes/quantum
+
+--- Priority 2 Statistics ---
+Total Processes Completed: 4
+Avg. Turnaround Time: 34.57 quanta
+Avg. Waiting Time: 31.41 quanta
+Avg. Response Time: 13.82 quanta
+Throughput: 0.04 processes/quantum
+
+--- Priority 3 Statistics ---
+Total Processes Completed: 0
+N/A (starvation)
+Avg Turnaround Time: N/A
+Avg Waiting Time: N/A
+Avg Response Time: N/A
+Throughput: N/A
+
+--- Priority 4 Statistics ---
+Total Processes Completed: 0
+N/A (starvation)
+Avg Turnaround Time: N/A
+Avg Waiting Time: N/A
+Avg Response Time: N/A
+Throughput: N/A
+
+--- Overall Statistics ---
+Total Processes Completed: 12
+Avg Turnaround Time: 16.71 quanta
+Avg Waiting Time: 11.62 quanta
+Avg Response Time: 5.21 quanta
+Throughput: 0.11 processes/quantum
+HPF Scheduler Simulation
+========================
+Generated 26 processes
+
+=== HPF Preemptive Scheduling ===
+Time	Process	Priority	Remaining	Status
+0	-	-		-		Idle
+1	-	-		-		Idle
+2	Q	1		9.4		Arrived
+2	Q	1		9.4		Started
+2	Q	1		8.4		RR Step
+3	Q	1		8.0		Arrived
+3	Q	1		8.4		Started
+3	Q	1		7.4		RR Step
+4	Q	1		8.0		Started
+4	Q	1		7.0		RR Step
+5	Q	1		7.4		Started
+5	Q	1		6.4		RR Step
+6	Q	1		7.0		Started
+6	Q	1		6.0		RR Step
+7	U	4		0.3		Arrived
+7	Q	1		6.4		Started
+7	Q	1		5.4		RR Step
+8	Q	1		6.0		Started
+8	Q	1		5.0		RR Step
+9	Q	1		5.4		Started
+9	Q	1		4.4		RR Step
+10	Q	1		5.0		Started
+10	Q	1		4.0		RR Step
+11	Q	1		4.4		Started
+11	Q	1		3.4		RR Step
+12	Q	1		4.0		Started
+12	Q	1		3.0		RR Step
+13	L	1		2.2		Arrived
+13	Q	1		3.4		Started
+13	Q	1		2.4		RR Step
+14	H	3		4.7		Arrived
+14	Q	1		3.0		Started
+14	Q	1		2.0		RR Step
+15	L	1		2.2		Started
+15	L	1		1.2		RR Step
+16	Q	1		2.4		Started
+16	Q	1		1.4		RR Step
+17	Q	1		2.0		Started
+17	Q	1		1.0		RR Step
+18	L	1		1.2		Started
+18	L	1		0.2		RR Step
+19	U	1		9.1		Arrived
+19	P	4		5.4		Arrived
+19	Q	1		1.4		Started
+19	Q	1		0.4		RR Step
+20	Q	1		1.0		Started
+20	Q	1		0.0		RR Step
+21	L	1		0.2		Started
+22	L	1		-0.8		Completed
+24	U	1		9.1		Started
+24	U	1		8.1		RR Step
+25	Q	1		0.4		Started
+26	Q	1		-0.6		Completed
+28	C	4		1.1		Arrived
+28	Q	1		0.0		Started
+29	Q	1		-1.0		Completed
+31	U	1		8.1		Started
+31	U	1		7.1		RR Step
+32	U	1		7.1		Started
+32	U	1		6.1		RR Step
+33	Y	2		0.1		Arrived
+33	U	1		6.1		Started
+33	U	1		5.1		RR Step
+34	K	3		8.3		Arrived
+34	U	1		5.1		Started
+34	U	1		4.1		RR Step
+35	U	1		4.1		Started
+35	U	1		3.1		RR Step
+36	U	1		3.1		Started
+36	U	1		2.1		RR Step
+37	U	1		2.1		Started
+37	U	1		1.1		RR Step
+38	U	1		1.1		Started
+38	U	1		0.1		RR Step
+39	U	1		0.1		Started
+40	U	1		-0.9		Completed
+42	M	3		1.7		Arrived
+42	T	4		9.0		Arrived
+42	Y	2		0.1		Started
+43	Y	2		-0.9		Completed
+45	H	3		4.7		Started
+45	H	3		3.7		RR Step
+46	K	3		8.3		Started
+46	K	3		7.3		RR Step
+47	M	3		1.7		Started
+47	M	3		0.7		RR Step
+48	H	3		3.7		Started
+48	H	3		2.7		RR Step
+49	K	3		7.3		Started
+49	K	3		6.3		RR Step
+50	M	3		0.7		Started
+51	M	3		-0.3		Completed
+53	H	3		2.7		Started
+53	H	3		1.7		RR Step
+54	K	3		6.3		Started
+54	K	3		5.3		RR Step
+55	H	3		1.7		Started
+55	H	3		0.7		RR Step
+56	K	3		5.3		Started
+56	K	3		4.3		RR Step
+57	S	3		8.4		Arrived
+57	H	3		0.7		Started
+58	H	3		-0.3		Completed
+60	K	3		4.3		Started
+60	K	3		3.3		RR Step
+61	N	4		0.7		Arrived
+61	S	3		8.4		Started
+61	S	3		7.4		RR Step
+62	K	3		3.3		Started
+62	K	3		2.3		RR Step
+63	S	3		7.4		Started
+63	S	3		6.4		RR Step
+64	K	3		2.3		Started
+64	K	3		1.3		RR Step
+65	S	3		6.4		Started
+65	S	3		5.4		RR Step
+66	K	3		1.3		Started
+66	K	3		0.3		RR Step
+67	T	1		8.7		Arrived
+67	M	3		7.9		Arrived
+67	T	1		8.7		Started
+67	T	1		7.7		RR Step
+68	T	1		7.7		Started
+68	T	1		6.7		RR Step
+69	T	1		6.7		Started
+69	T	1		5.7		RR Step
+70	T	1		5.7		Started
+70	T	1		4.7		RR Step
+71	T	1		4.7		Started
+71	T	1		3.7		RR Step
+72	T	1		3.7		Started
+72	T	1		2.7		RR Step
+73	U	3		3.3		Arrived
+73	T	1		2.7		Started
+73	T	1		1.7		RR Step
+74	T	1		1.7		Started
+74	T	1		0.7		RR Step
+75	T	1		0.7		Started
+76	T	1		-0.3		Completed
+78	J	4		0.3		Arrived
+78	K	3		7.5		Arrived
+78	S	3		5.4		Started
+78	S	3		4.4		RR Step
+79	K	3		0.3		Started
+80	K	3		-0.7		Completed
+82	M	3		7.9		Started
+82	M	3		6.9		RR Step
+83	E	1		3.5		Arrived
+83	E	1		3.5		Started
+83	E	1		2.5		RR Step
+84	E	1		2.5		Started
+84	E	1		1.5		RR Step
+85	E	1		1.5		Started
+85	E	1		0.5		RR Step
+86	P	4		8.3		Arrived
+86	E	1		0.5		Started
+87	E	1		-0.5		Completed
+89	U	4		1.3		Arrived
+89	Y	4		8.0		Arrived
+89	U	3		3.3		Started
+89	U	3		2.3		RR Step
+90	K	3		7.5		Started
+90	K	3		6.5		RR Step
+91	S	3		4.4		Started
+91	S	3		3.4		RR Step
+92	M	3		6.9		Started
+92	M	3		5.9		RR Step
+93	Z	4		7.6		Arrived
+93	U	3		2.3		Started
+93	U	3		1.3		RR Step
+94	K	3		6.5		Started
+94	K	3		5.5		RR Step
+95	B	4		4.2		Arrived
+95	S	3		3.4		Started
+95	S	3		2.4		RR Step
+96	M	3		5.9		Started
+96	M	3		4.9		RR Step
+97	U	3		1.3		Started
+97	U	3		0.3		RR Step
+98	K	3		5.5		Started
+98	K	3		4.5		RR Step
+99	Q	3		8.8		Arrived
+99	S	3		2.4		Started
+99	S	3		1.4		RR Step
+100	M	3		4.9		Started
+100	M	3		3.9		RR Step
+101	U	3		0.3		Started
+102	U	3		-0.7		Completed
+104	K	3		4.5		Started
+104	K	3		3.5		RR Step
+105	-	-		-		Idle
+106	-	-		-		Idle
+
+=== HPF Preemptive PQueue Statistics ===
+
+--- Priority 1 Statistics ---
+Total Processes Completed: 6
+Avg. Turnaround Time: 15.12 quanta
+Avg. Waiting Time: 8.30 quanta
+Avg. Response Time: 1.95 quanta
+Throughput: 0.07 processes/quantum
+
+--- Priority 2 Statistics ---
+Total Processes Completed: 1
+Avg. Turnaround Time: 9.59 quanta
+Avg. Waiting Time: 9.48 quanta
+Avg. Response Time: 9.59 quanta
+Throughput: 0.02 processes/quantum
+
+--- Priority 3 Statistics ---
+Total Processes Completed: 4
+Avg. Turnaround Time: 31.56 quanta
+Avg. Waiting Time: 27.06 quanta
+Avg. Response Time: 16.56 quanta
+Throughput: 0.04 processes/quantum
+
+--- Priority 4 Statistics ---
+Total Processes Completed: 0
+N/A (starvation)
+Avg Turnaround Time: N/A
+Avg Waiting Time: N/A
+Avg Response Time: N/A
+Throughput: N/A
 
 --- Overall Statistics ---
 Total Processes Completed: 11
-Avg Turnaround Time: 22.50 quanta
-Avg Waiting Time: 16.33 quanta
+Avg Turnaround Time: 20.59 quanta
+Avg Waiting Time: 15.23 quanta
 Avg Response Time: 7.96 quanta
 Throughput: 0.11 processes/quantum
 HPF Scheduler Simulation
@@ -228,334 +914,232 @@ Generated 26 processes
 === HPF Preemptive Scheduling ===
 Time	Process	Priority	Remaining	Status
 0	-	-		-		Idle
-1	W	4		7.1		Arrived
-1	W	4		7.1		Started
-4	Y	2		3.8		Arrived
-4	W	4		4.1		Preempted
-4	Y	2		3.8		Started
-6	J	3		4.8		Arrived
-6	O	4		4.6		Arrived
-8	Y	2		-0.2		Completed
-10	J	3		4.8		Started
-12	L	1		5.5		Arrived
-12	M	3		2.4		Arrived
-12	J	3		2.8		Preempted
-12	L	1		5.5		Started
-13	Q	3		6.2		Arrived
-18	L	1		-0.5		Completed
-20	M	3		2.4		Started
-23	M	3		-0.6		Completed
-25	K	4		7.7		Arrived
-25	F	3		4.0		Arrived
-25	J	3		2.8		Started
-26	T	1		0.2		Arrived
-26	J	3		1.8		Preempted
-26	T	1		0.2		Started
-27	T	1		-0.8		Completed
-29	Q	3		6.2		Started
-32	P	3		5.9		Arrived
-33	T	1		9.5		Arrived
-33	Q	3		2.2		Preempted
-33	T	1		9.5		Started
-37	Q	2		5.0		Arrived
-40	X	1		8.5		Arrived
-43	T	1		-0.5		Completed
-45	X	1		8.5		Started
-53	W	4		6.6		Arrived
-54	X	1		-0.5		Completed
-56	Q	2		5.0		Started
-60	L	3		1.1		Arrived
-60	K	4		2.8		Arrived
-61	I	1		7.7		Arrived
-61	Q	2		0.0		Preempted
-61	I	1		7.7		Started
-65	V	1		5.9		Arrived
-69	I	1		-0.3		Completed
-71	E	2		2.9		Arrived
-71	J	2		0.7		Arrived
-71	V	1		5.9		Started
-75	Q	3		7.5		Arrived
-77	V	1		-0.1		Completed
-79	Q	2		0.0		Started
-80	Q	2		-1.0		Completed
-82	E	2		2.9		Started
-85	E	2		-0.1		Completed
-87	M	3		2.2		Arrived
-87	J	2		0.7		Started
-88	J	2		-0.3		Completed
-90	D	1		5.3		Arrived
-90	D	1		5.3		Started
-92	Y	2		6.4		Arrived
-96	D	1		-0.7		Completed
-98	R	3		2.7		Arrived
-98	Y	2		6.4		Started
-105	Y	2		-0.6		Completed
-107	W	4		4.1		Started
-108	W	4		3.1		Preempted
-108	-	-		-		Idle
-109	-	-		-		Idle
-
-=== HPF Preemptive PQueue Statistics ===
-
---- Priority 1 Statistics ---
-Total Processes Completed: 7
-Avg. Turnaround Time: 7.85 quanta
-Avg. Waiting Time: 1.77 quanta
-Avg. Response Time: 2.27 quanta
-Throughput: 0.07 processes/quantum
-
---- Priority 2 Statistics ---
-Total Processes Completed: 5
-Avg. Turnaround Time: 18.46 quanta
-Avg. Waiting Time: 14.70 quanta
-Avg. Response Time: 11.66 quanta
-Throughput: 0.05 processes/quantum
-
---- Priority 3 Statistics ---
-Total Processes Completed: 1
-Avg. Turnaround Time: 10.79 quanta
-Avg. Waiting Time: 8.34 quanta
-Avg. Response Time: 8.79 quanta
-Throughput: 0.05 processes/quantum
-
---- Priority 4 Statistics ---
-Total Processes Completed: 0
-No processes completed (possible starvation)
-Avg Turnaround Time: N/A
-Avg Waiting Time: N/A
-Avg Response Time: N/A
-Throughput: 0.00 processes/quantum
-
---- Overall Statistics ---
-Total Processes Completed: 13
-Avg Turnaround Time: 12.16 quanta
-Avg Waiting Time: 7.25 quanta
-Avg Response Time: 6.39 quanta
-Throughput: 0.12 processes/quantum
-HPF Scheduler Simulation
-========================
-Generated 26 processes
-
-=== HPF Preemptive Scheduling ===
-Time	Process	Priority	Remaining	Status
-0	-	-		-		Idle
 1	-	-		-		Idle
-9	Z	1		7.7		Arrived
-9	Z	1		7.7		Started
-11	C	3		0.9		Arrived
-12	K	1		2.5		Arrived
-17	Z	1		-0.3		Completed
-19	K	1		2.5		Started
-21	E	3		4.6		Arrived
-22	K	1		-0.5		Completed
-24	M	3		9.9		Arrived
-24	N	4		5.9		Arrived
-24	R	2		1.3		Arrived
-24	R	2		1.3		Started
-26	R	2		-0.7		Completed
-28	J	4		9.0		Arrived
-28	C	3		0.9		Started
-29	C	3		-0.1		Completed
-31	G	4		0.4		Arrived
-31	E	3		4.6		Started
-33	W	2		6.0		Arrived
-33	E	3		2.6		Preempted
-33	W	2		6.0		Started
-37	W	4		7.3		Arrived
-40	W	2		-1.0		Completed
-42	M	3		9.9		Started
-44	R	1		6.3		Arrived
-44	M	3		7.9		Preempted
-44	R	1		6.3		Started
-50	A	4		3.1		Arrived
-51	R	1		-0.7		Completed
-53	J	3		1.3		Arrived
-53	E	3		2.6		Started
-55	D	4		9.9		Arrived
-56	E	3		-0.4		Completed
-58	M	3		7.9		Started
-66	M	3		-0.1		Completed
-68	X	2		2.9		Arrived
-68	X	2		2.9		Started
-71	X	2		-0.1		Completed
-73	J	3		1.3		Started
-75	J	3		-0.7		Completed
-77	A	4		8.9		Arrived
-77	N	4		5.9		Started
-78	H	2		6.4		Arrived
-78	N	4		4.9		Preempted
-78	H	2		6.4		Started
-82	B	1		0.8		Arrived
-82	H	2		2.4		Preempted
-82	B	1		0.8		Started
-83	B	1		-0.2		Completed
-85	H	3		8.2		Arrived
-85	H	2		2.4		Started
-87	K	2		3.3		Arrived
-88	H	2		-0.6		Completed
-90	D	1		7.7		Arrived
-90	G	4		2.0		Arrived
-90	D	1		7.7		Started
-92	R	4		3.3		Arrived
-96	A	4		7.8		Arrived
-98	D	1		-0.3		Completed
-100	X	1		5.2		Arrived
-100	X	1		5.2		Started
-106	X	1		-0.8		Completed
-108	-	-		-		Idle
-109	-	-		-		Idle
+2	Q	1		9.4		Arrived
+2	Q	1		9.4		Started
+2	Q	1		8.4		RR Step
+3	Q	1		8.0		Arrived
+3	Q	1		8.4		Started
+3	Q	1		7.4		RR Step
+4	Q	1		8.0		Started
+4	Q	1		7.0		RR Step
+5	Q	1		7.4		Started
+5	Q	1		6.4		RR Step
+6	Q	1		7.0		Started
+6	Q	1		6.0		RR Step
+7	U	4		0.3		Arrived
+7	Q	1		6.4		Started
+7	Q	1		5.4		RR Step
+8	Q	1		6.0		Started
+8	Q	1		5.0		RR Step
+9	Q	1		5.4		Started
+9	Q	1		4.4		RR Step
+10	Q	1		5.0		Started
+10	Q	1		4.0		RR Step
+11	Q	1		4.4		Started
+11	Q	1		3.4		RR Step
+12	Q	1		4.0		Started
+12	Q	1		3.0		RR Step
+13	L	1		2.2		Arrived
+13	Q	1		3.4		Started
+13	Q	1		2.4		RR Step
+14	H	3		4.7		Arrived
+14	Q	1		3.0		Started
+14	Q	1		2.0		RR Step
+15	L	1		2.2		Started
+15	L	1		1.2		RR Step
+16	Q	1		2.4		Started
+16	Q	1		1.4		RR Step
+17	Q	1		2.0		Started
+17	Q	1		1.0		RR Step
+18	L	1		1.2		Started
+18	L	1		0.2		RR Step
+19	U	1		9.1		Arrived
+19	P	4		5.4		Arrived
+19	Q	1		1.4		Started
+19	Q	1		0.4		RR Step
+20	Q	1		1.0		Started
+20	Q	1		0.0		RR Step
+21	L	1		0.2		Started
+22	L	1		-0.8		Completed
+24	U	1		9.1		Started
+24	U	1		8.1		RR Step
+25	Q	1		0.4		Started
+26	Q	1		-0.6		Completed
+28	C	4		1.1		Arrived
+28	Q	1		0.0		Started
+29	Q	1		-1.0		Completed
+31	U	1		8.1		Started
+31	U	1		7.1		RR Step
+32	U	1		7.1		Started
+32	U	1		6.1		RR Step
+33	Y	2		0.1		Arrived
+33	U	1		6.1		Started
+33	U	1		5.1		RR Step
+34	K	3		8.3		Arrived
+34	U	1		5.1		Started
+34	U	1		4.1		RR Step
+35	U	1		4.1		Started
+35	U	1		3.1		RR Step
+36	U	1		3.1		Started
+36	U	1		2.1		RR Step
+37	U	1		2.1		Started
+37	U	1		1.1		RR Step
+38	U	1		1.1		Started
+38	U	1		0.1		RR Step
+39	U	1		0.1		Started
+40	U	1		-0.9		Completed
+42	M	3		1.7		Arrived
+42	T	4		9.0		Arrived
+42	Y	2		0.1		Started
+43	Y	2		-0.9		Completed
+45	H	3		4.7		Started
+45	H	3		3.7		RR Step
+46	K	3		8.3		Started
+46	K	3		7.3		RR Step
+47	M	3		1.7		Started
+47	M	3		0.7		RR Step
+48	H	3		3.7		Started
+48	H	3		2.7		RR Step
+49	K	3		7.3		Started
+49	K	3		6.3		RR Step
+50	M	3		0.7		Started
+51	M	3		-0.3		Completed
+53	H	3		2.7		Started
+53	H	3		1.7		RR Step
+54	K	3		6.3		Started
+54	K	3		5.3		RR Step
+55	H	3		1.7		Started
+55	H	3		0.7		RR Step
+56	K	3		5.3		Started
+56	K	3		4.3		RR Step
+57	S	3		8.4		Arrived
+57	H	3		0.7		Started
+58	H	3		-0.3		Completed
+60	K	3		4.3		Started
+60	K	3		3.3		RR Step
+61	N	4		0.7		Arrived
+61	S	3		8.4		Started
+61	S	3		7.4		RR Step
+62	K	3		3.3		Started
+62	K	3		2.3		RR Step
+63	S	3		7.4		Started
+63	S	3		6.4		RR Step
+64	K	3		2.3		Started
+64	K	3		1.3		RR Step
+65	S	3		6.4		Started
+65	S	3		5.4		RR Step
+66	K	3		1.3		Started
+66	K	3		0.3		RR Step
+67	T	1		8.7		Arrived
+67	M	3		7.9		Arrived
+67	T	1		8.7		Started
+67	T	1		7.7		RR Step
+68	T	1		7.7		Started
+68	T	1		6.7		RR Step
+69	T	1		6.7		Started
+69	T	1		5.7		RR Step
+70	T	1		5.7		Started
+70	T	1		4.7		RR Step
+71	T	1		4.7		Started
+71	T	1		3.7		RR Step
+72	T	1		3.7		Started
+72	T	1		2.7		RR Step
+73	U	3		3.3		Arrived
+73	T	1		2.7		Started
+73	T	1		1.7		RR Step
+74	T	1		1.7		Started
+74	T	1		0.7		RR Step
+75	T	1		0.7		Started
+76	T	1		-0.3		Completed
+78	J	4		0.3		Arrived
+78	K	3		7.5		Arrived
+78	S	3		5.4		Started
+78	S	3		4.4		RR Step
+79	K	3		0.3		Started
+80	K	3		-0.7		Completed
+82	M	3		7.9		Started
+82	M	3		6.9		RR Step
+83	E	1		3.5		Arrived
+83	E	1		3.5		Started
+83	E	1		2.5		RR Step
+84	E	1		2.5		Started
+84	E	1		1.5		RR Step
+85	E	1		1.5		Started
+85	E	1		0.5		RR Step
+86	P	4		8.3		Arrived
+86	E	1		0.5		Started
+87	E	1		-0.5		Completed
+89	U	4		1.3		Arrived
+89	Y	4		8.0		Arrived
+89	U	3		3.3		Started
+89	U	3		2.3		RR Step
+90	K	3		7.5		Started
+90	K	3		6.5		RR Step
+91	S	3		4.4		Started
+91	S	3		3.4		RR Step
+92	M	3		6.9		Started
+92	M	3		5.9		RR Step
+93	Z	4		7.6		Arrived
+93	U	3		2.3		Started
+93	U	3		1.3		RR Step
+94	K	3		6.5		Started
+94	K	3		5.5		RR Step
+95	B	4		4.2		Arrived
+95	S	3		3.4		Started
+95	S	3		2.4		RR Step
+96	M	3		5.9		Started
+96	M	3		4.9		RR Step
+97	U	3		1.3		Started
+97	U	3		0.3		RR Step
+98	K	3		5.5		Started
+98	K	3		4.5		RR Step
+99	Q	3		8.8		Arrived
+99	S	3		2.4		Started
+99	S	3		1.4		RR Step
+100	M	3		4.9		Started
+100	M	3		3.9		RR Step
+101	U	3		0.3		Started
+102	U	3		-0.7		Completed
+104	K	3		4.5		Started
+104	K	3		3.5		RR Step
+105	-	-		-		Idle
+106	-	-		-		Idle
 
 === HPF Preemptive PQueue Statistics ===
 
 --- Priority 1 Statistics ---
 Total Processes Completed: 6
-Avg. Turnaround Time: 7.09 quanta
-Avg. Waiting Time: 2.05 quanta
-Avg. Response Time: 2.59 quanta
-Throughput: 0.06 processes/quantum
+Avg. Turnaround Time: 15.12 quanta
+Avg. Waiting Time: 8.30 quanta
+Avg. Response Time: 1.95 quanta
+Throughput: 0.07 processes/quantum
 
 --- Priority 2 Statistics ---
-Total Processes Completed: 4
-Avg. Turnaround Time: 5.61 quanta
-Avg. Waiting Time: 1.44 quanta
-Avg. Response Time: 1.11 quanta
-Throughput: 0.05 processes/quantum
+Total Processes Completed: 1
+Avg. Turnaround Time: 9.59 quanta
+Avg. Waiting Time: 9.48 quanta
+Avg. Response Time: 9.59 quanta
+Throughput: 0.02 processes/quantum
 
 --- Priority 3 Statistics ---
 Total Processes Completed: 4
-Avg. Turnaround Time: 29.77 quanta
-Avg. Waiting Time: 25.58 quanta
-Avg. Response Time: 17.77 quanta
-Throughput: 0.05 processes/quantum
+Avg. Turnaround Time: 31.56 quanta
+Avg. Waiting Time: 27.06 quanta
+Avg. Response Time: 16.56 quanta
+Throughput: 0.04 processes/quantum
 
 --- Priority 4 Statistics ---
 Total Processes Completed: 0
-No processes completed (possible starvation)
+N/A (starvation)
 Avg Turnaround Time: N/A
 Avg Waiting Time: N/A
 Avg Response Time: N/A
-Throughput: 0.00 processes/quantum
+Throughput: N/A
 
 --- Overall Statistics ---
-Total Processes Completed: 14
-Avg Turnaround Time: 13.15 quanta
-Avg Waiting Time: 8.60 quanta
-Avg Response Time: 6.50 quanta
-Throughput: 0.13 processes/quantum
-HPF Scheduler Simulation
-========================
-Generated 26 processes
-
-=== HPF Preemptive Scheduling ===
-Time	Process	Priority	Remaining	Status
-0	-	-		-		Idle
-1	-	-		-		Idle
-2	D	2		1.5		Arrived
-2	T	4		2.0		Arrived
-2	D	2		1.5		Started
-4	D	2		-0.5		Completed
-6	T	4		2.0		Started
-7	M	2		7.8		Arrived
-7	T	4		1.0		Preempted
-7	M	2		7.8		Started
-9	N	3		3.8		Arrived
-15	M	2		-0.2		Completed
-17	O	3		6.1		Arrived
-17	N	3		3.8		Started
-18	G	3		9.9		Arrived
-19	H	1		1.3		Arrived
-19	N	3		1.8		Preempted
-19	H	1		1.3		Started
-21	H	1		-0.7		Completed
-23	O	3		6.1		Started
-26	I	1		8.0		Arrived
-26	O	3		3.1		Preempted
-26	I	1		8.0		Started
-35	I	1		-1.0		Completed
-37	A	4		7.9		Arrived
-37	Y	4		2.5		Arrived
-37	G	3		9.9		Started
-42	J	2		4.7		Arrived
-42	G	3		4.9		Preempted
-42	J	2		4.7		Started
-47	J	2		-0.3		Completed
-49	N	3		1.8		Started
-50	I	2		1.5		Arrived
-50	Y	3		0.8		Arrived
-50	N	3		0.8		Preempted
-50	I	2		1.5		Started
-52	I	2		-0.5		Completed
-54	O	3		3.1		Started
-58	O	3		-0.9		Completed
-60	G	3		4.9		Started
-65	G	3		-0.1		Completed
-67	Y	3		0.8		Started
-68	Y	3		-0.2		Completed
-70	F	4		9.7		Arrived
-70	N	3		0.8		Started
-71	N	3		-0.2		Completed
-73	F	1		0.4		Arrived
-73	F	1		0.4		Started
-74	F	1		-0.6		Completed
-76	T	4		1.0		Started
-78	T	4		-1.0		Completed
-80	B	4		9.3		Arrived
-80	A	4		7.9		Started
-81	G	4		0.8		Arrived
-81	P	2		1.1		Arrived
-81	A	4		6.9		Preempted
-81	P	2		1.1		Started
-83	P	2		-0.9		Completed
-85	K	1		3.7		Arrived
-85	K	1		3.7		Started
-86	S	3		2.4		Arrived
-88	P	2		9.5		Arrived
-89	K	1		-0.3		Completed
-91	Y	2		2.0		Arrived
-91	P	2		9.5		Started
-94	O	1		7.6		Arrived
-94	P	2		6.5		Preempted
-94	O	1		7.6		Started
-96	L	1		2.2		Arrived
-98	J	4		6.1		Arrived
-99	M	1		4.0		Arrived
-102	O	1		-0.4		Completed
-104	-	-		-		Idle
-105	-	-		-		Idle
-
-=== HPF Preemptive PQueue Statistics ===
-
---- Priority 1 Statistics ---
-Total Processes Completed: 5
-Avg. Turnaround Time: 4.41 quanta
-Avg. Waiting Time: 0.22 quanta
-Avg. Response Time: 0.61 quanta
-Throughput: 0.05 processes/quantum
-
---- Priority 2 Statistics ---
-Total Processes Completed: 5
-Avg. Turnaround Time: 3.33 quanta
-Avg. Waiting Time: 0.00 quanta
-Avg. Response Time: 0.53 quanta
-Throughput: 0.06 processes/quantum
-
---- Priority 3 Statistics ---
-Total Processes Completed: 4
-Avg. Turnaround Time: 41.62 quanta
-Avg. Waiting Time: 36.49 quanta
-Avg. Response Time: 13.12 quanta
-Throughput: 0.06 processes/quantum
-
---- Priority 4 Statistics ---
-Total Processes Completed: 1
-Avg. Turnaround Time: 75.25 quanta
-Avg. Waiting Time: 73.23 quanta
-Avg. Response Time: 4.25 quanta
-Throughput: 0.01 processes/quantum
-
---- Overall Statistics ---
-Total Processes Completed: 15
-Avg Turnaround Time: 18.70 quanta
-Avg Waiting Time: 14.69 quanta
-Avg Response Time: 4.16 quanta
-Throughput: 0.15 processes/quantum
+Total Processes Completed: 11
+Avg Turnaround Time: 20.59 quanta
+Avg Waiting Time: 15.23 quanta
+Avg Response Time: 7.96 quanta
+Throughput: 0.11 processes/quantum

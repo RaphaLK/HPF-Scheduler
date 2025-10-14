@@ -8,7 +8,7 @@
  *    - Expected total run time: float from 0.1 - 10 quanta
  *    - A priority from 1 - 4, where 1 is the highest
  *
- * Notes: Use FCFS.
+ * Notes: Use FCFS
  *
  * Written by: Raphael Kusuma -- 10/11/2025
  */
