@@ -86,7 +86,7 @@ Throughput: N/A
 --- Priority 4 Statistics ---
 Total Processes Completed: 1
 Avg. Turnaround Time: 1.49 quanta
-Avg. Waiting Time: -0.46 quanta
+Avg. Waiting Time: 0.46 quanta
 Avg. Response Time: 0.49 quanta
 Throughput: 0.25 processes/quantum
 
