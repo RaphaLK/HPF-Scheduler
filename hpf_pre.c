@@ -17,50 +17,62 @@
 #include <time.h>
 #include <string.h>
 
-#define MAX_PROCESSES 167
+#define NUM_PROCESSES 200
 #define MAX_QUANTA 100
 
 // For the sake of not having multiple header files, I'm gonna have this large C file.
 typedef struct process
 {
-  int processId;
+  // int processId;
   char processName;
   float arrivalTime;
   float expectedRunTime;
   float remainingTime;
   int priority;
+  // When a process starts and finished
   float startTime;
   float finishTime;
+  
+  // It is equal to the sum total of Waiting time and Execution time.
   float turnaroundTime;
   float waitingTime;
   int timesPreempted;
 } process;
 
-// Queue struct -> Will be used for the priority queue
+// pqueue
 typedef struct pqueue
 {
-  process *processes[MAX_PROCESSES];
+  process *processes[NUM_PROCESSES];
   int front;
   int rear;
   int count;
 } pqueue;
 
-// Statistics structure
+// Stats
 typedef struct stats
 {
   float avgTurnaroundTime;
   float avgWaitingTime;
   float avgResponseTime;
   float throughput;
+
   int totalProcesses;
 } stats;
 
-process processList[MAX_PROCESSES];
+// Per-priority statistics structure
+typedef struct priority_stats
+{
+  stats priorityStats[4];  // Statistics for each priority level (1-4)
+  stats overallStats;      // Overall statistics across all priorities
+} priority_stats;
+
+process processList[NUM_PROCESSES];
 int numProcesses = 0;
 
 // Priority Queue util functions
 void initQueue(pqueue *q)
 {
+  // Setting front and rear queue pointers.
   q->front = 0;
   q->rear = -1;
   q->count = 0;
@@ -68,9 +80,9 @@ void initQueue(pqueue *q)
 
 void enqueue(pqueue *q, process *p)
 {
-  if (q->count < MAX_PROCESSES)
+  if (q->count < NUM_PROCESSES)
   {
-    q->rear = (q->rear + 1) % MAX_PROCESSES;
+    q->rear = (q->rear + 1) % NUM_PROCESSES;
     q->processes[q->rear] = p;
     q->count++;
   }
@@ -81,7 +93,7 @@ process *dequeue(pqueue *q)
   if (q->count > 0)
   {
     process *p = q->processes[q->front];
-    q->front = (q->front + 1) % MAX_PROCESSES;
+    q->front = (q->front + 1) % NUM_PROCESSES;
     q->count--;
     return p;
   }
@@ -98,15 +110,17 @@ void generate_proc()
   numProcesses = 0;
 
   // "It's ok to create more processes than you use"
-  for (int i = 0; i < MAX_PROCESSES; i++)
+  for (int i = 0; i < NUM_PROCESSES; i++)
   {
     process *simProcess = &processList[numProcesses];
-    simProcess->processId = numProcesses;
     simProcess->processName = 'A' + (rand() % 26);
-    simProcess->arrivalTime = (float)rand() / (float)(RAND_MAX) * 99.0f;
-    simProcess->expectedRunTime = 0.1f + (float)rand() / (float)(RAND_MAX) * 9.9f;
+    // arrival: 0 - 100f, expectedRunTime 0.1 - 10f 
+    simProcess->arrivalTime = ((float)rand() / (float)(RAND_MAX)) * 99.0f;
+    simProcess->expectedRunTime = 0.1f + ((float)rand() / (float)(RAND_MAX)) * 9.9f;
     simProcess->remainingTime = simProcess->expectedRunTime;
     simProcess->priority = (rand() % 4) + 1; // 1-4, where 1 is highest
+
+    // Statistics
     simProcess->startTime = -1;
     simProcess->finishTime = -1;
     simProcess->turnaroundTime = 0;
@@ -149,12 +163,110 @@ void calculateStats(stats *s)
   }
 
   s->totalProcesses = completedProcesses;
+
   s->avgTurnaroundTime = completedProcesses > 0 ? totalTurnaround / completedProcesses : 0;
   s->avgWaitingTime = completedProcesses > 0 ? totalWaiting / completedProcesses : 0;
+  
+  // the time-interval between submission of a request, and the first response to that request
   s->avgResponseTime = completedProcesses > 0 ? totalResponse / completedProcesses : 0;
   
-  // Throughput = completed processes / total simulation time
+  // Throughput = finished processes / total simulation time
   s->throughput = maxFinishTime > 0 ? completedProcesses / maxFinishTime : 0;
+}
+
+void calculatePriorityStats(priority_stats *ps)
+{
+  // Initialize all statistics to zero
+  for (int priority = 0; priority < 4; priority++)
+  {
+    ps->priorityStats[priority].avgTurnaroundTime = 0;
+    ps->priorityStats[priority].avgWaitingTime = 0;
+    ps->priorityStats[priority].avgResponseTime = 0;
+    ps->priorityStats[priority].throughput = 0;
+    ps->priorityStats[priority].totalProcesses = 0;
+  }
+
+  // Arrays to accumulate statistics for each priority
+  float totalTurnaround[4] = {0};
+  float totalWaiting[4] = {0};
+  float totalResponse[4] = {0};
+  int completedProcesses[4] = {0};
+  float maxFinishTime[4] = {0};
+  
+  // Overall statistics accumulators
+  float overallTotalTurnaround = 0;
+  float overallTotalWaiting = 0;
+  float overallTotalResponse = 0;
+  int overallCompletedProcesses = 0;
+  float overallMaxFinishTime = 0;
+
+  // Calculate statistics for each priority and overall
+  for (int i = 0; i < numProcesses; i++)
+  {
+    // Only count processes that actually started (startTime >= 0) and completed
+    if (processList[i].startTime >= 0 && processList[i].finishTime >= 0)
+    {
+      int priority = processList[i].priority - 1; // Convert to 0-based index
+      
+      // Per-priority statistics
+      totalTurnaround[priority] += processList[i].turnaroundTime;
+      totalWaiting[priority] += processList[i].waitingTime;
+      
+      float responseTime = processList[i].startTime - processList[i].arrivalTime;
+      totalResponse[priority] += responseTime;
+      
+      completedProcesses[priority]++;
+      
+      if (processList[i].finishTime > maxFinishTime[priority])
+      {
+        maxFinishTime[priority] = processList[i].finishTime;
+      }
+      
+      // Overall statistics
+      overallTotalTurnaround += processList[i].turnaroundTime;
+      overallTotalWaiting += processList[i].waitingTime;
+      overallTotalResponse += responseTime;
+      overallCompletedProcesses++;
+      
+      if (processList[i].finishTime > overallMaxFinishTime)
+      {
+        overallMaxFinishTime = processList[i].finishTime;
+      }
+    }
+  }
+
+  // Calculate averages for each priority
+  for (int priority = 0; priority < 4; priority++)
+  {
+    ps->priorityStats[priority].totalProcesses = completedProcesses[priority];
+    
+    if (completedProcesses[priority] > 0)
+    {
+      ps->priorityStats[priority].avgTurnaroundTime = totalTurnaround[priority] / completedProcesses[priority];
+      ps->priorityStats[priority].avgWaitingTime = totalWaiting[priority] / completedProcesses[priority];
+      ps->priorityStats[priority].avgResponseTime = totalResponse[priority] / completedProcesses[priority];
+    }
+    
+    if (maxFinishTime[priority] > 0)
+    {
+      ps->priorityStats[priority].throughput = completedProcesses[priority] / maxFinishTime[priority];
+    }
+  }
+
+  // Calculate overall averages
+  ps->overallStats.totalProcesses = overallCompletedProcesses;
+  
+  if (overallCompletedProcesses > 0)
+  {
+    ps->overallStats.avgTurnaroundTime = overallTotalTurnaround / overallCompletedProcesses;
+    ps->overallStats.avgWaitingTime = overallTotalWaiting / overallCompletedProcesses;
+    ps->overallStats.avgResponseTime = overallTotalResponse / overallCompletedProcesses;
+  }
+  
+  if (overallMaxFinishTime > 0)
+  {
+    ps->overallStats.throughput = overallCompletedProcesses / overallMaxFinishTime;
+  }
 }
 
 void printStats(stats *s, const char *algorithmName)
@@ -165,6 +277,42 @@ void printStats(stats *s, const char *algorithmName)
   printf("Avg Waiting Time: %.2f quanta\n", s->avgWaitingTime);
   printf("Avg Response Time: %.2f quanta\n", s->avgResponseTime);
   printf("Throughput: %.2f processes/quantum\n", s->throughput);
+}
+
+void printPriorityStats(priority_stats *ps, const char *algorithmName)
+{
+  printf("\n=== %s Per-Priority Statistics ===\n", algorithmName);
+  
+  // Print statistics for each priority level
+  for (int priority = 0; priority < 4; priority++)
+  {
+    printf("\n--- Priority %d Statistics ---\n", priority + 1);
+    printf("Total Processes Completed: %d\n", ps->priorityStats[priority].totalProcesses);
+    
+    if (ps->priorityStats[priority].totalProcesses > 0)
+    {
+      printf("Avg Turnaround Time: %.2f quanta\n", ps->priorityStats[priority].avgTurnaroundTime);
+      printf("Avg Waiting Time: %.2f quanta\n", ps->priorityStats[priority].avgWaitingTime);
+      printf("Avg Response Time: %.2f quanta\n", ps->priorityStats[priority].avgResponseTime);
+      printf("Throughput: %.2f processes/quantum\n", ps->priorityStats[priority].throughput);
+    }
+    else
+    {
+      printf("No processes completed (possible starvation)\n");
+      printf("Avg Turnaround Time: N/A\n");
+      printf("Avg Waiting Time: N/A\n");
+      printf("Avg Response Time: N/A\n");
+      printf("Throughput: 0.00 processes/quantum\n");
+    }
+  }
+  
+  // Print overall statistics
+  printf("\n--- Overall Statistics ---\n");
+  printf("Total Processes Completed: %d\n", ps->overallStats.totalProcesses);
+  printf("Avg Turnaround Time: %.2f quanta\n", ps->overallStats.avgTurnaroundTime);
+  printf("Avg Waiting Time: %.2f quanta\n", ps->overallStats.avgWaitingTime);
+  printf("Avg Response Time: %.2f quanta\n", ps->overallStats.avgResponseTime);
+  printf("Throughput: %.2f processes/quantum\n", ps->overallStats.throughput);
 }
 
 // HPF Preemptive Scheduling
@@ -179,7 +327,7 @@ void hpf_preemptive()
   float currentTime = 0;
   int processIndex = 0;
   process *currentProcess = NULL;
-  stats schedulerStats = {0};
+  priority_stats schedulerStats = {0};
   int idleTime = 0;
   int totalPreemptions = 0;
 
@@ -288,8 +436,8 @@ void hpf_preemptive()
     currentTime += 1.0f;
   }
 
-  calculateStats(&schedulerStats);
-  printStats(&schedulerStats, "HPF Preemptive");
+  calculatePriorityStats(&schedulerStats);
+  printPriorityStats(&schedulerStats, "HPF Preemptive");
 }
 
 int main()
