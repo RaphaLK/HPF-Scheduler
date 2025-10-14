@@ -17,7 +17,7 @@
 #include <time.h>
 #include <string.h>
 
-#define NUM_PROCESSES 200
+#define NUM_PROCESSES 26
 #define MAX_QUANTA 100
 
 // For the sake of not having multiple header files, I'm gonna have this large C file.
@@ -100,11 +100,6 @@ process *dequeue(pqueue *q)
   return NULL;
 }
 
-int isQueueEmpty(pqueue *q)
-{
-  return q->count == 0;
-}
-
 void generate_proc()
 {
   numProcesses = 0;
@@ -128,6 +123,17 @@ void generate_proc()
     simProcess->timesPreempted = 0;
 
     numProcesses++;
+  }
+
+  // Sort processes by arrival time for better scheduling
+  for (int i = 0; i < numProcesses - 1; i++) {
+    for (int j = 0; j < numProcesses - i - 1; j++) {
+      if (processList[j].arrivalTime > processList[j + 1].arrivalTime) {
+        process temp = processList[j];
+        processList[j] = processList[j + 1];
+        processList[j + 1] = temp;
+      }
+    }
   }
 
   printf("Generated %d processes\n", numProcesses);
@@ -176,7 +182,7 @@ void calculateStats(stats *s)
 
 void calculatePriorityStats(priority_stats *ps)
 {
-  // Initialize all statistics to zero
+  // Initialize stats of each priority queue
   for (int priority = 0; priority < 4; priority++)
   {
     ps->priorityStats[priority].avgTurnaroundTime = 0;
@@ -186,14 +192,12 @@ void calculatePriorityStats(priority_stats *ps)
     ps->priorityStats[priority].totalProcesses = 0;
   }
 
-  // Arrays to accumulate statistics for each priority
   float totalTurnaround[4] = {0};
   float totalWaiting[4] = {0};
   float totalResponse[4] = {0};
   int completedProcesses[4] = {0};
   float maxFinishTime[4] = {0};
   
-  // Overall statistics accumulators
   float overallTotalTurnaround = 0;
   float overallTotalWaiting = 0;
   float overallTotalResponse = 0;
@@ -357,7 +361,7 @@ void hpf_preemptive()
       // Check if a higher priority process has arrived
       for (int i = 0; i < currentProcess->priority - 1; i++)
       {
-        if (!isQueueEmpty(&priorityQueues[i]))
+        if (!priorityQueues[i].count == 0)
         {
           // Preempt current process
           // Time (in Quanta) -> Process Name -> Proc Priority Level -> Remaining Quanta till Completion -> Current Status
@@ -380,7 +384,7 @@ void hpf_preemptive()
     {
       for (int i = 0; i < 4; i++)
       {
-        if (!isQueueEmpty(&priorityQueues[i]))
+        if (!priorityQueues[i].count == 0)
         {
           currentProcess = dequeue(&priorityQueues[i]);
           if (currentProcess->startTime < 0)
