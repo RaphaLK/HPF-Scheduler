@@ -331,8 +331,8 @@ void hpf_preemptive()
   int idleTime = 0;
   int totalPreemptions = 0;
 
-  printf("\n=== HPF Preemptive Scheduling ===\n");
-  printf("Time\tProcess\tPriority\tRemaining\tStatus\n");
+  printf("\nHPF Preemptive Scheduling \n");
+  printf("Time\tPID\tPriority Lvl\tRemaining\tStatus\n");
 
   while (currentTime < MAX_QUANTA * 2)
   {
@@ -361,7 +361,7 @@ void hpf_preemptive()
         {
           // Preempt current process
           // Time (in Quanta) -> Process Name -> Proc Priority Level -> Remaining Quanta till Completion -> Current Status
-          printf("%d\t%c\t%d\t\t%.1f\t\tPre-empted\n",
+          printf("%d\t%c\t%d\t\t%.1f\t\tPreempt\n",
                  currentTime, currentProcess->processName,
                  currentProcess->priority, currentProcess->remainingTime);
 
@@ -398,7 +398,7 @@ void hpf_preemptive()
             currentProcess->startTime = currentTime;
           }
           // Time (in Quanta) -> Process Name -> Proc Priority Level -> Remaining Quanta till Completion -> Current Status
-          printf("%d\t%c\t%d\t\t%.1f\t\tStarted\n",
+          printf("%d\t%c\t%d\t\t%.1f\t\tStart\n",
                  currentTime, currentProcess->processName,
                  currentProcess->priority, currentProcess->remainingTime);
           break;
@@ -421,7 +421,7 @@ void hpf_preemptive()
         currentProcess->waitingTime = currentProcess->turnaroundTime - currentProcess->expectedRunTime;
 
         // Time (in Quanta) -> Process Name -> Proc Priority Level -> Remaining Quanta till Completion -> Current Status
-        printf("%d\t%c\t%d\t\t%.1f\t\tCompleted\n",
+        printf("%d\t%c\t%d\t\t%.1f\t\tComplete\n",
                currentTime++, currentProcess->processName,
                currentProcess->priority, currentProcess->remainingTime);
 
@@ -433,11 +433,6 @@ void hpf_preemptive()
         // current process --> back to rear of its priority queue (RR)
         int currentPriority = currentProcess->priority - 1;
         enqueue(&priorityQueues[currentPriority], currentProcess);
-
-        printf("%d\t%c\t%d\t\t%.1f\t\tRR Step\n",
-               currentTime, currentProcess->processName,
-               currentProcess->priority, currentProcess->remainingTime);
-
         currentProcess = NULL; 
       }
     }
@@ -463,12 +458,7 @@ int main()
 {
   srand(time(NULL));
 
-  printf("HPF Scheduler Simulation\n");
-  printf("========================\n");
-
-  // Generate processes
   generate_proc();
-  // Scheduler
   hpf_preemptive();
 
   return 0;

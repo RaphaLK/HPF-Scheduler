@@ -275,9 +275,9 @@ void calculatePriorityStats(priority_stats *ps)
   }
 }
 
-void printPriorityStats(priority_stats *ps, const char *algorithmName)
+void printPriorityStats(priority_stats *ps)
 {
-  printf("\n=== %s PQueue Statistics ===\n", algorithmName);
+  printf("\nHPF_Non_Preemptive PQueue Statistics\n");
   
   // Print statistics for each priority queue
   for (int priority = 0; priority < 4; priority++)
@@ -326,8 +326,8 @@ void hpf_non_preemptive()
   priority_stats schedulerStats = {0};
   int idleTime = 0;
 
-  printf("\n=== HPF Preemptive Scheduling ===\n");
-  printf("Time\tProcess\tPriority\tRemaining\tStatus\n");
+  printf("\n HPF Non-Preemptive Scheduling \n");
+  printf("Time\tPID\tPriority Lvl\tRemaining\tStatus\n");
 
   while (currentTime < MAX_QUANTA * 2)
   { 
@@ -392,7 +392,7 @@ void hpf_non_preemptive()
         currentProcess->waitingTime = currentProcess->turnaroundTime - currentProcess->expectedRunTime;
         
         // Time (in Quanta) -> Process Name -> Proc Priority Level -> Remaining Quanta till Completion -> Current Status
-        printf("%d\t%c\t%d\t\t%.1f\t\tCompleted\n",
+        printf("%d\t%c\t%d\t\t%.1f\t\tComplete\n",
                currentTime++, currentProcess->processName,
                currentProcess->priority, currentProcess->remainingTime);
 
@@ -415,19 +415,14 @@ void hpf_non_preemptive()
   }
 
   calculatePriorityStats(&schedulerStats);
-  printPriorityStats(&schedulerStats, "HPF Non-Preemptive");
+  printPriorityStats(&schedulerStats);
 }
 
 int main()
 {
   srand(time(NULL));
 
-  printf("HPF (Non-pre) Scheduler Simulation\n");
-  printf("=============================\n");
-
-  // Generate processes
   generate_proc();
-  // Scheduler
   hpf_non_preemptive();
 
   return 0;
