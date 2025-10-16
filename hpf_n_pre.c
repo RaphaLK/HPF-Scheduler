@@ -275,16 +275,6 @@ void calculatePriorityStats(priority_stats *ps)
   }
 }
 
-void printStats(stats *s, const char *algorithmName)
-{
-  printf("\n=== %s Stats ===\n", algorithmName);
-  printf("Total Processes Completed: %d\n", s->totalProcesses);
-  printf("Avg. Turnaround Time: %.2f quanta\n", s->avgTurnaroundTime);
-  printf("Avg. Waiting Time: %.2f quanta\n", s->avgWaitingTime);
-  printf("Avg. Response Time: %.2f quanta\n", s->avgResponseTime);
-  printf("Throughput: %.2f processes/quantum\n", s->throughput);
-}
-
 void printPriorityStats(priority_stats *ps, const char *algorithmName)
 {
   printf("\n=== %s PQueue Statistics ===\n", algorithmName);
